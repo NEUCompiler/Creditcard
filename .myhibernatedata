@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Sat Jul 23 20:42:34 CST 2016
+genBasicCompId=false
+sessionFactoryName=
+profile=
+daoSFId=sessionFactory
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=src/applicationContext.xml
+useJavaTypes=true
+keyGenerator=
+genVersionTag=false
+sessionFactoryId=sessionFactory
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/Credicard/src/applicationContext.xml
+createConfigFile=true
