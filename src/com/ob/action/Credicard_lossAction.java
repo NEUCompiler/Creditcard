@@ -23,8 +23,11 @@ public class Credicard_lossAction extends SuperAction implements ModelDriven<Cre
 	}
 
 	public String loss() {
+		creditcard.setCid(123);
 		System.out.println(creditcard);
+		request.setAttribute("creditcard",creditcard);
 		System.out.println(credicardService.findById(123456));
+		request.setAttribute("a", 12345);
 		return SUCCESS;
 	}
 	

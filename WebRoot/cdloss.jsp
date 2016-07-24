@@ -21,7 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
-    <a href = "credicardLossAction.action" >123</a>
+    a: ${request.creditcard.cid}
   </body>
 </html>
