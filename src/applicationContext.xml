@@ -26,7 +26,7 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/ob/model/Creditcard.hbm.xml</value>
+				<value>Account.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -35,17 +35,17 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	<bean id="creditcardDAO" class="com.ob.dao.impl.CredicardDAOImpl">
+	<bean id="accountDAO" class="com.ob.dao.impl.AccountDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="credicardService" class="com.ob.service.impl.CredicardServiceImpl"
+	<bean id="accountService" class="com.ob.service.impl.AccountServiceImpl"
 		scope="singleton">
-		<property name="dao" ref="creditcardDAO" />
+		<property name="dao" ref="accountDAO" />
 	</bean>
 	<bean id="creadicardLossAction" class="com.ob.action.Credicard_lossAction"
 		scope="prototype">
-		<property name="credicardService" ref="credicardService"></property>
+		<property name="accountService" ref="accountService"></property>
 	</bean>
 </beans>

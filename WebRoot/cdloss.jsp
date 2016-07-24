@@ -21,6 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    a: ${request.creditcard.cid}
+    a: ${request.creditcard.accountid}
   </body>
 </html>

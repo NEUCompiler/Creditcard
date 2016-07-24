@@ -11,19 +11,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 
-import com.ob.dao.CreditcardDAO;
-import com.ob.model.Creditcard;
+import com.ob.dao.AccountDAO;
+import com.ob.model.Account;
 
-public class CredicardDAOImpl implements CreditcardDAO {
-	private static final Logger log = LoggerFactory
-			.getLogger(CreditcardDAO.class);
+public class AccountDAOImpl implements AccountDAO {
+	private static final Logger log = LoggerFactory.getLogger(AccountDAO.class);
 	// property constants
-	public static final String SPASSWORD = "spassword";
-	public static final String CPASSWORD = "cpassword";
+	public static final String DEALPASSWORD = "dealpassword";
 	public static final String AMOUNT = "amount";
-	public static final String INTEGRATE = "integrate";
+	public static final String TERM = "term";
 	public static final String ISLOSS = "isloss";
+	public static final String LIMIT = "limit";
+	public static final String INTEGRATE = "integrate";
 	public static final String ISACTIVE = "isactive";
+	public static final String ISOPENOB = "isopenob";
+	public static final String CLIENTID = "clientid";
 
 	private SessionFactory sessionFactory;
 
@@ -39,8 +41,8 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		// do nothing
 	}
 
-	public void save(Creditcard transientInstance) {
-		log.debug("saving Creditcard instance");
+	public void save(Account transientInstance) {
+		log.debug("saving Account instance");
 		try {
 			getCurrentSession().save(transientInstance);
 			log.debug("save successful");
@@ -50,8 +52,8 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public void delete(Creditcard persistentInstance) {
-		log.debug("deleting Creditcard instance");
+	public void delete(Account persistentInstance) {
+		log.debug("deleting Account instance");
 		try {
 			getCurrentSession().delete(persistentInstance);
 			log.debug("delete successful");
@@ -61,11 +63,11 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public Creditcard findById(java.lang.Integer id) {
-		log.debug("getting Creditcard instance with id: " + id);
+	public Account findById(java.lang.Integer id) {
+		log.debug("getting Account instance with id: " + id);
 		try {
-			Creditcard instance = (Creditcard) getCurrentSession().get(
-					"com.ob.model.Creditcard", id);
+			Account instance = (Account) getCurrentSession().get(
+					"com.ob.model.Account", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -73,11 +75,11 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public List findByExample(Creditcard instance) {
-		log.debug("finding Creditcard instance by example");
+	public List findByExample(Account instance) {
+		log.debug("finding Account instance by example");
 		try {
 			List results = getCurrentSession()
-					.createCriteria("com.ob.model.Creditcard")
+					.createCriteria("com.ob.model.Account")
 					.add(Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
@@ -89,10 +91,10 @@ public class CredicardDAOImpl implements CreditcardDAO {
 	}
 
 	public List findByProperty(String propertyName, Object value) {
-		log.debug("finding Creditcard instance with property: " + propertyName
+		log.debug("finding Account instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from Creditcard as model where model."
+			String queryString = "from Account as model where model."
 					+ propertyName + "= ?";
 			Query queryObject = getCurrentSession().createQuery(queryString);
 			queryObject.setParameter(0, value);
@@ -103,34 +105,46 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public List findBySpassword(Object spassword) {
-		return findByProperty(SPASSWORD, spassword);
-	}
-
-	public List findByCpassword(Object cpassword) {
-		return findByProperty(CPASSWORD, cpassword);
+	public List findByDealpassword(Object dealpassword) {
+		return findByProperty(DEALPASSWORD, dealpassword);
 	}
 
 	public List findByAmount(Object amount) {
 		return findByProperty(AMOUNT, amount);
 	}
 
-	public List findByIntegrate(Object integrate) {
-		return findByProperty(INTEGRATE, integrate);
+	public List findByTerm(Object term) {
+		return findByProperty(TERM, term);
 	}
 
 	public List findByIsloss(Object isloss) {
 		return findByProperty(ISLOSS, isloss);
 	}
 
+	public List findByLimit(Object limit) {
+		return findByProperty(LIMIT, limit);
+	}
+
+	public List findByIntegrate(Object integrate) {
+		return findByProperty(INTEGRATE, integrate);
+	}
+
 	public List findByIsactive(Object isactive) {
 		return findByProperty(ISACTIVE, isactive);
 	}
 
+	public List findByIsopenob(Object isopenob) {
+		return findByProperty(ISOPENOB, isopenob);
+	}
+
+	public List findByClientid(Object clientid) {
+		return findByProperty(CLIENTID, clientid);
+	}
+
 	public List findAll() {
-		log.debug("finding all Creditcard instances");
+		log.debug("finding all Account instances");
 		try {
-			String queryString = "from Creditcard";
+			String queryString = "from Account";
 			Query queryObject = getCurrentSession().createQuery(queryString);
 			return queryObject.list();
 		} catch (RuntimeException re) {
@@ -139,10 +153,10 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public Creditcard merge(Creditcard detachedInstance) {
-		log.debug("merging Creditcard instance");
+	public Account merge(Account detachedInstance) {
+		log.debug("merging Account instance");
 		try {
-			Creditcard result = (Creditcard) getCurrentSession().merge(
+			Account result = (Account) getCurrentSession().merge(
 					detachedInstance);
 			log.debug("merge successful");
 			return result;
@@ -152,8 +166,8 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public void attachDirty(Creditcard instance) {
-		log.debug("attaching dirty Creditcard instance");
+	public void attachDirty(Account instance) {
+		log.debug("attaching dirty Account instance");
 		try {
 			getCurrentSession().saveOrUpdate(instance);
 			log.debug("attach successful");
@@ -163,8 +177,8 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public void attachClean(Creditcard instance) {
-		log.debug("attaching clean Creditcard instance");
+	public void attachClean(Account instance) {
+		log.debug("attaching clean Account instance");
 		try {
 			getCurrentSession().buildLockRequest(LockOptions.NONE).lock(
 					instance);
@@ -175,7 +189,7 @@ public class CredicardDAOImpl implements CreditcardDAO {
 		}
 	}
 
-	public static CreditcardDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (CreditcardDAO) ctx.getBean("CreditcardDAO");
+	public static AccountDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (AccountDAO) ctx.getBean("AccountDAO");
 	}
 }

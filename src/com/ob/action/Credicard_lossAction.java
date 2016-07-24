@@ -1,42 +1,38 @@
 package com.ob.action;
 
-import com.ob.dao.CreditcardDAO;
-import com.ob.dao.impl.CredicardDAOImpl;
-import com.ob.model.Creditcard;
-import com.ob.service.CredicardService;
+import com.ob.dao.impl.AccountDAOImpl;
+import com.ob.model.Account;
+import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class Credicard_lossAction extends SuperAction implements ModelDriven<Creditcard>{
+public class Credicard_lossAction extends SuperAction implements ModelDriven<Account>{
 	
-	private Creditcard creditcard;
-	private CredicardService credicardService;
+	private Account account;
+	private AccountService accountService;
 	
-	public void setCredicardService(CredicardService credicardService) {
-		this.credicardService = credicardService;
+	public AccountService getAccountService() {
+		return accountService;
 	}
-	
-	/**
-	 * @return the credicardService
-	 */
-	public CredicardService getCredicardService() {
-		return credicardService;
+
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
 	}
 
 	public String loss() {
-		creditcard.setCid(123);
-		System.out.println(creditcard);
-		request.setAttribute("creditcard",creditcard);
-		System.out.println(credicardService.findById(123456));
+		account.setAccountid(123);
+		System.out.println(account);
+		request.setAttribute("creditcard",account);
+		System.out.println(accountService.findById(123));
 		request.setAttribute("a", 12345);
 		return SUCCESS;
 	}
 	
 	 @Override
-    public Creditcard getModel() {
+    public Account getModel() {
 
-       if(creditcard == null){
-    	   creditcard = new Creditcard();
+       if(account == null){
+    	   account = new Account();
        }
-       return creditcard;
+       return account;
     }
 }
