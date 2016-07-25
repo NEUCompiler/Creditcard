@@ -44,7 +44,7 @@
 		scope="singleton">
 		<property name="dao" ref="accountDAO" />
 	</bean>
-	<bean id="creadicardLossAction" class="com.ob.action.Credicard_lossAction"
+	<bean id="creadicardLossAction" class="com.ob.action.CreditcardAction"
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>

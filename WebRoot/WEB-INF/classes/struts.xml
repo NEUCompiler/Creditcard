@@ -2,14 +2,21 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="defaults" namespace="/" extends="struts-default">
-		<action name="credicardLoss" class="com.ob.action.Credicard_lossAction" method="loss">
-				
-				<result>/cdloss.jsp</result>
-				<result name="error">error.jsp</result>
-				<result name="login">/cdloss.jsp</result>
-				
-				<!-- input：当类型转换错误是返回input -->
-				<result name="input">/login.jsp</result>
-			</action>
+		<action name="credicard_*" class="com.ob.action.CreditcardAction"
+			method="{1}">
+
+			<result>/cdloss.jsp</result>
+			<result name="lossFaild">lossFaild.jsp</result>
+			<result name="lossSuccess">/cdloss.jsp</result>
+			<result name="activeSuccess">/cdloss.jsp</result>
+			<result name="activeFailed">/activeFaild.jsp</result>
+			
+			
+			<result name="showCreditCard">/showCreditCard.jsp</result>
+			
+			
+			<!-- input：当类型转换错误是返回input -->
+			<result name="input">/login.jsp</result>
+		</action>
 	</package>
 </struts>    

@@ -22,16 +22,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      
-    <a href="credicardLoss.action">信用卡挂失</a></br>
-    <a href="credicardActive.action">信用卡激活</a></br>
-    <a href="credicardSearchPassword_set.action">信用卡查询密码设置</a></br>
-    <a href="credicardDealPassword_set.action">信用卡交易密码设置</a></br>
-    <a href="credicardLimit_set.action">信用卡额度设置</a></br>
-    <a href="credicardLimit_search.action">信用额度查询</a></br>
-	<a href="credicardHaveBill_search.action">已出账单查询</a></br>
-	<a href="credicardYetBill_search.action">未出账单查询</a></br>
-	<a href="credicardIntegratel_search.action">积分查询</a></br>
-	<a href="credicardIntegratel_search.action">申请进度查询</a></br>
+    <a href="credicard_setLoss.action">信用卡挂失</a></br>
+    <a href="credicard_setActive.action">信用卡激活</a></br>
+    <a href="credicard_setSearchPassword.action">信用卡查询密码设置</a></br>
+    <a href="credicard_setDealPassword.action">信用卡交易密码设置</a></br>
+    <a href="credicard_setLimit.action">信用卡额度设置</a></br>
+    <a href="credicard_searchLimit.action">信用额度查询</a></br>
+	<a href="credicard_searchHaveBill.action">已出账单查询</a></br>
+	<a href="credicard_searchYetBill.action">未出账单查询</a></br>
+	<a href="credicard_searchIntegratel.action">积分查询</a></br>
+	<a href="credicard_searchIntegratel.action">申请进度查询</a></br>
+	</br></br></br></br></br>
+	<a href="credicard_showCreditCard.action">信用卡显示</a></br>
+
 	    
   </body>
 </html>

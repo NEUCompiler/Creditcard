@@ -141,7 +141,7 @@ public class AccountDAOImpl implements AccountDAO {
 		return findByProperty(CLIENTID, clientid);
 	}
 
-	public List findAll() {
+	public List<Account> findAll() {
 		log.debug("finding all Account instances");
 		try {
 			String queryString = "from Account";

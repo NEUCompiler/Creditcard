@@ -43,7 +43,7 @@ public interface AccountDAO {
 
 	public List findByIsopenob(Object isopenob);
 
-	public List findByClientid(Object clientid);
+	public List<Account> findByClientid(Object clientid);
 
 	public List findAll();
 
