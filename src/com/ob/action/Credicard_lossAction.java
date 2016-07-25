@@ -26,7 +26,7 @@ public class Credicard_lossAction extends SuperAction implements ModelDriven<Acc
 		request.setAttribute("a", 12345);
 		return SUCCESS;
 	}
-	
+	z
 	 @Override
     public Account getModel() {
 
