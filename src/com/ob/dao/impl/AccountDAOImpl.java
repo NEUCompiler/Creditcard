@@ -21,7 +21,7 @@ public class AccountDAOImpl implements AccountDAO {
 	public static final String AMOUNT = "amount";
 	public static final String TERM = "term";
 	public static final String ISLOSS = "isloss";
-	public static final String LIMIT = "limit";
+	public static final String CDLIMIT = "cdlimit";
 	public static final String INTEGRATE = "integrate";
 	public static final String ISACTIVE = "isactive";
 	public static final String ISOPENOB = "isopenob";
@@ -121,8 +121,8 @@ public class AccountDAOImpl implements AccountDAO {
 		return findByProperty(ISLOSS, isloss);
 	}
 
-	public List findByLimit(Object limit) {
-		return findByProperty(LIMIT, limit);
+	public List findByLimit(Object cdlimit) {
+		return findByProperty(CDLIMIT, cdlimit);
 	}
 
 	public List findByIntegrate(Object integrate) {

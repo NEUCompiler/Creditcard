@@ -22,8 +22,8 @@
         <property name="isloss" type="java.lang.Integer">
             <column name="isloss" not-null="true" />
         </property>
-        <property name="limit" type="java.lang.Integer">
-            <column name="limit" not-null="true" />
+        <property name="cdlimit" type="java.lang.Integer">
+            <column name="cdlimit" not-null="true" />
         </property>
         <property name="integrate" type="java.lang.Integer">
             <column name="integrate" not-null="true" />

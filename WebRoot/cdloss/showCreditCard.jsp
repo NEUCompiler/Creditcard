@@ -1,5 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -26,12 +26,19 @@
 </head>
 
 <body>
-<select >
-	<c:forEach items="${request.accountIdList}" var="li">
-		
-			<option>${li}</option>
-		
-	</c:forEach>
-</select>
+
+	<form action="CreditcardLoss_selectCard.action">
+
+	<select name="selectCd">
+		<c:forEach items="${request.accountIdList}" var="li">
+
+			<option value=${li}>${li}</option>
+
+		</c:forEach>
+	</select>
+	<button>下一步</button>
+	</form>
+	<button onclick="location.href('index.jsp')">上一步</button>
+	
 </body>
 </html>

@@ -13,7 +13,7 @@ public class Account implements java.io.Serializable {
 	private Integer amount;
 	private Integer term;
 	private Integer isloss;
-	private Integer limit;
+	private Integer cdlimit;
 	private Integer integrate;
 	private Integer isactive;
 	private Integer isopenob;
@@ -27,13 +27,13 @@ public class Account implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Account(Integer accountid, Integer dealpassword, Integer amount,
-			Integer isloss, Integer limit, Integer integrate, Integer isactive,
+			Integer isloss, Integer cdlimit, Integer integrate, Integer isactive,
 			Integer isopenob, Integer clientid) {
 		this.accountid = accountid;
 		this.dealpassword = dealpassword;
 		this.amount = amount;
 		this.isloss = isloss;
-		this.limit = limit;
+		this.cdlimit = cdlimit;
 		this.integrate = integrate;
 		this.isactive = isactive;
 		this.isopenob = isopenob;
@@ -42,14 +42,14 @@ public class Account implements java.io.Serializable {
 
 	/** full constructor */
 	public Account(Integer accountid, Integer dealpassword, Integer amount,
-			Integer term, Integer isloss, Integer limit, Integer integrate,
+			Integer term, Integer isloss, Integer cdlimit, Integer integrate,
 			Integer isactive, Integer isopenob, Integer clientid) {
 		this.accountid = accountid;
 		this.dealpassword = dealpassword;
 		this.amount = amount;
 		this.term = term;
 		this.isloss = isloss;
-		this.limit = limit;
+		this.cdlimit = cdlimit;
 		this.integrate = integrate;
 		this.isactive = isactive;
 		this.isopenob = isopenob;
@@ -98,12 +98,12 @@ public class Account implements java.io.Serializable {
 		this.isloss = isloss;
 	}
 
-	public Integer getLimit() {
-		return this.limit;
+	public Integer getCdlimit() {
+		return cdlimit;
 	}
 
-	public void setLimit(Integer limit) {
-		this.limit = limit;
+	public void setCdlimit(Integer cdlimit) {
+		this.cdlimit = cdlimit;
 	}
 
 	public Integer getIntegrate() {
@@ -142,7 +142,7 @@ public class Account implements java.io.Serializable {
 	public String toString() {
 		return "Account [accountid=" + accountid + ", dealpassword="
 				+ dealpassword + ", amount=" + amount + ", term=" + term
-				+ ", isloss=" + isloss + ", limit=" + limit + ", integrate="
+				+ ", isloss=" + isloss + ", cdlimit=" + cdlimit + ", integrate="
 				+ integrate + ", isactive=" + isactive + ", isopenob="
 				+ isopenob + ", clientid=" + clientid + "]";
 	}

@@ -2,21 +2,34 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="defaults" namespace="/" extends="struts-default">
-		<action name="credicard_*" class="com.ob.action.CreditcardAction"
-			method="{1}">
-
-			<result>/cdloss.jsp</result>
-			<result name="lossFaild">lossFaild.jsp</result>
-			<result name="lossSuccess">/cdloss.jsp</result>
-			<result name="activeSuccess">/cdloss.jsp</result>
-			<result name="activeFailed">/activeFaild.jsp</result>
+		<action name="*_*" class="com.ob.action.{1}Action"
+			method="{2}">
+            <!-- 信用卡挂失  -->
+			<result>/cdloss/cdloss.jsp</result>
+			<result name="lossFaild">/cdloss/lossFaild.jsp</result>
+			<result name="lossSuccess">/cdloss/index.jsp</result>
+			<result name="activeSuccess">/cdloss/cdloss.jsp</result>
+			<result name="activeFailed">/cdloss/activeFaild.jsp</result>
+			<result name="showCreditCard">/cdloss/showCreditCard.jsp</result>
+			<result name="selectOk">/cdloss/confirmPassword.jsp</result>
+			<result name="confirmSuccess">/cdloss/cdloss.jsp</result>
+			<result name="confirmFailed">/cdloss/confirmPassword.jsp</result>
+			
+			<!-- 信用卡积分显示  -->
+			<result name="showCreditCardIntegration">/cdIntegration/showCreditCard.jsp</result>
+			<result name="selectOkIntegration">/cdIntegration/showIntegration.jsp</result>
+			
+			<!-- 信用卡额度查询   -->
+			<result name="showCreditCardSearchLimit">/cdLimit/showCreditCardSearch.jsp</result>
+			<result name="selectOkLimit">/cdLimit/showLimit.jsp</result>
+			
+			<!-- 信用卡额度设置   -->
+			<result name="showCreditCardSetLimit">/cdLimit/showCreditCardSet.jsp</result>
+			<result name="selectOkLimitSet">/cdLimit/confirmPassword.jsp</result>
+			<result name="confirmFailedLimit">/cdLimit/confirmPassword.jsp</result>
+			<result name="confirmSuccessLimit">/cdLimit/showLimit.jsp</result>
 			
 			
-			<result name="showCreditCard">/showCreditCard.jsp</result>
-			
-			
-			<!-- input：当类型转换错误是返回input -->
-			<result name="input">/login.jsp</result>
 		</action>
 	</package>
 </struts>    

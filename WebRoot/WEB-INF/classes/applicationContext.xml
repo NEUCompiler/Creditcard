@@ -27,6 +27,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>Account.hbm.xml</value>
+				<value>Client.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -40,11 +41,33 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="clientDAO" class="com.ob.dao.impl.ClientDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	<bean id="accountService" class="com.ob.service.impl.AccountServiceImpl"
 		scope="singleton">
 		<property name="dao" ref="accountDAO" />
+		<property name="clientDAO" ref="clientDAO" />
 	</bean>
-	<bean id="creadicardLossAction" class="com.ob.action.CreditcardAction"
+	<bean id="clientService" class="com.ob.service.impl.ClientServiceImpl"
+		scope="singleton">
+		<property name="clientDAO" ref="clientDAO" />
+	</bean>
+	<bean id="creadicardLossAction" class="com.ob.action.CreditcardLossAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+	</bean>
+	<bean id="creditcardIntegrationAction" class="com.ob.action.CreditcardIntegrationAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+	</bean>
+	<bean id="credicardLimitSearchAction" class="com.ob.action.CredicardLimitSearchAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+	</bean>
+	<bean id="credicardLimitSetAction" class="com.ob.action.CredicardLimitSetAction"
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
