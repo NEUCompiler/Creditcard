@@ -6,14 +6,16 @@
 			method="{2}">
             <!-- 信用卡挂失  -->
 			<result>/cdloss/cdloss.jsp</result>
-			<result name="lossFaild">/cdloss/lossFaild.jsp</result>
-			<result name="lossSuccess">/cdloss/index.jsp</result>
-			<result name="activeSuccess">/cdloss/cdloss.jsp</result>
-			<result name="activeFailed">/cdloss/activeFaild.jsp</result>
-			<result name="showCreditCard">/cdloss/showCreditCard.jsp</result>
-			<result name="selectOk">/cdloss/confirmPassword.jsp</result>
-			<result name="confirmSuccess">/cdloss/cdloss.jsp</result>
-			<result name="confirmFailed">/cdloss/confirmPassword.jsp</result>
+			<result name="showCreditCardLoss">/cdloss/showCreditCard.jsp</result>
+			<result name="selectOkLoss">/cdloss/confirmPassword.jsp</result>
+			<result name="confirmFailedLoss">/cdloss/confirmPassword.jsp</result>
+			<result name="confirmSuccessLoss">/cdloss/lossSuccess.jsp</result>
+			
+			<!-- 信用卡激活   -->
+			<result name="showCreditCardActive">/cdActive/showCreditCard.jsp</result>
+			<result name="selectOkActive">/cdActive/confirmPassword.jsp</result>
+			<result name="confirmFailedActive">/cdActive/confirmPassword.jsp</result>
+			<result name="confirmSuccessActive">/cdActive/activeSuccess.jsp</result>
 			
 			<!-- 信用卡积分显示  -->
 			<result name="showCreditCardIntegration">/cdIntegration/showCreditCard.jsp</result>

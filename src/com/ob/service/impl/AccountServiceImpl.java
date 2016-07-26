@@ -60,14 +60,41 @@ public class AccountServiceImpl implements  AccountService {
 	public boolean setActive(Account account) {
 		account = dao.findById(account.getAccountid());
 		account.setIsactive(1);
-		//TODO merge”–Œ Ã‚°£
 		dao.merge(account);
 		System.out.println(account);
 		return true;
 	}
-
+	
 	@Override
 	public ArrayList<Integer> getCdsOfClient(Account account) {
+		ArrayList<Integer> accountIdList = new ArrayList<Integer>();
+		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
+		
+		for (Account item : accounts) {
+			accountIdList.add(item.getAccountid());
+		}
+		
+		return accountIdList;
+	}
+
+	
+	@Override
+	public ArrayList<Integer> getCdsOfClientByLoss(Account account) {
+		ArrayList<Integer> accountIdList = new ArrayList<Integer>();
+		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
+		
+		for (Account item : accounts) {
+			
+			if (item.getIsloss() == 0) {
+				accountIdList.add(item.getAccountid());
+			}
+		}
+		
+		return accountIdList;
+	}
+	
+	@Override
+	public ArrayList<Integer> getCdsOfClientByActive(Account account) {
 		ArrayList<Integer> accountIdList = new ArrayList<Integer>();
 		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
 		
@@ -121,6 +148,4 @@ public class AccountServiceImpl implements  AccountService {
 		dao.merge(account);
 		return true;
 	}
-	
-	
 }

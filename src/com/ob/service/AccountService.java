@@ -14,8 +14,11 @@ public interface AccountService {
 	public boolean setActive(Account account);
 
 	public ArrayList<Integer> getCdsOfClient(Account account);
+	public ArrayList<Integer> getCdsOfClientByLoss(Account account);
+	public ArrayList<Integer> getCdsOfClientByActive(Account account);
 	public boolean confirmSearchPassword(Client client);
 	public Integer getIntegration(Account account);
 	public Integer getLimit(Account account);
 	public boolean setLimit(Account account);
+	
 }

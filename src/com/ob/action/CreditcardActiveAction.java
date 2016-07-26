@@ -1,13 +1,12 @@
 package com.ob.action;
 
-
 import com.ob.model.Account;
 import com.ob.model.Client;
 import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CreditcardLossAction extends SuperAction implements ModelDriven<Account> {
-	
+public class CreditcardActiveAction extends SuperAction implements
+			ModelDriven<Account> {
 	/**
 	 * 
 	 */
@@ -15,28 +14,17 @@ public class CreditcardLossAction extends SuperAction implements ModelDriven<Acc
 	private Account account;
 	private Client client = new Client();
 	private AccountService accountService;
-	
-	public AccountService getAccountService() {
-		return accountService;
-	}
 
 	public void setAccountService(AccountService accountService) {
 		this.accountService = accountService;
 	}
-
+	
 	/**
-	 * 信用卡挂失设置。
-	 * @return
+	 * 信用卡激活。
 	 */
-	public String loss() {
+	public void active() {
 		account.setAccountid(Integer.parseInt(session.getAttribute("creditcard").toString()));
-		
-		if (accountService.isLoss(account)) {
-			return "lossFaild";
-		} 
-		
-		accountService.setLoss(account);
-		return "lossSuccess";
+		accountService.setActive(account);
 	}
 	
 	/**
@@ -46,8 +34,18 @@ public class CreditcardLossAction extends SuperAction implements ModelDriven<Acc
 	public String showCreditCard() {
 		account.setClientid(1);
 		session.setAttribute("clientId", 1);
-		request.setAttribute("accountIdList", accountService.getCdsOfClientByLoss(account));
-		return "showCreditCardLoss";
+		request.setAttribute("accountIdList", accountService.getCdsOfClientByActive(account));
+		return "showCreditCardActive";
+	}
+	
+	/**
+	 * 选择卡。
+	 * @return
+	 */
+	public String selectCard() {
+		session.setAttribute("creditcard", request.getParameter("selectCd"));
+		session.setAttribute("cdLimit", request.getParameter("cdLimit"));
+		return "selectOkActive";
 	}
 	
 	/**
@@ -59,27 +57,18 @@ public class CreditcardLossAction extends SuperAction implements ModelDriven<Acc
 		client.setClientid(Integer.parseInt(session.getAttribute("clientId").toString()));
 			
 		if (!accountService.confirmSearchPassword(client)) {
-			return "confirmFailedLoss";
+			return "confirmFailedActive";
 		}
-		loss();
-		return "confirmSuccessLoss";
+		
+		active();
+		return "confirmSuccessActive";
 	}
 	
-	/**
-	 * 选择卡。
-	 * @return
-	 */
-	public String selectCard() {
-		session.setAttribute("creditcard", request.getParameter("selectCd"));
-		return "selectOkLoss";
+	@Override
+	public Account getModel() {
+		if (account == null) {
+			account = new Account();
+		}
+		return account;
 	}
-	
-	 @Override
-    public Account getModel() {
-
-       if(account == null){
-    	   account = new Account();
-       }
-       return account;
-    }
 }

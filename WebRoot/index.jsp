@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
      
     <a href="CreditcardLoss_showCreditCard.action">信用卡挂失</a></br>
-    <a href="credicard_setActive.action">信用卡激活</a></br>
+    <a href="CreditcardActive_showCreditCard.action">信用卡激活</a></br>
     <a href="credicard_setSearchPassword.action">信用卡查询密码设置</a></br>
     <a href="credicard_setDealPassword.action">信用卡交易密码设置</a></br>
     <a href="CredicardLimitSet_showCreditCard.action">信用卡额度设置</a></br>

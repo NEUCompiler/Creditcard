@@ -71,4 +71,8 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
+	<bean id="creditcardActiveAction" class="com.ob.action.CreditcardActiveAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+	</bean>
 </beans>
