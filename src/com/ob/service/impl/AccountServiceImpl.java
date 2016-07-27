@@ -14,6 +14,11 @@ import com.ob.service.ClientService;
 public class AccountServiceImpl implements  AccountService {
 	private AccountDAO dao;
 	private ClientDAO clientDAO;
+	
+	@Override
+	public AccountDAO getDao() {
+		return dao;
+	}
 
 	public void setDao(AccountDAO dao) {
 		this.dao = dao;
@@ -148,4 +153,28 @@ public class AccountServiceImpl implements  AccountService {
 		dao.merge(account);
 		return true;
 	}
+
+
+	
+	@Override
+	public boolean setDealPassword(Account account) {
+		Integer dealPassword = account.getDealpassword();
+		account  = dao.findById(account.getAccountid());
+		account.setDealpassword(dealPassword);
+		dao.merge(account);
+		return false;
+	}
+
+	@Override
+	public boolean changeDealPassword(Account account) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean cancelDealPassword(Account account) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 }

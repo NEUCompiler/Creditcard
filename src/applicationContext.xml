@@ -75,4 +75,8 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
+	<bean id="credicardDealPasswordSetAction" class="com.ob.action.CredicardDealPasswordSetAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+	</bean>
 </beans>

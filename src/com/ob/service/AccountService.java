@@ -7,6 +7,7 @@ import com.ob.model.Account;
 import com.ob.model.Client;
 
 public interface AccountService {
+	public AccountDAO getDao();
 	public boolean isLoss(Account account);
 	public boolean setLoss(Account account);
 	
@@ -20,5 +21,7 @@ public interface AccountService {
 	public Integer getIntegration(Account account);
 	public Integer getLimit(Account account);
 	public boolean setLimit(Account account);
-	
+	public boolean setDealPassword(Account account);
+	public boolean changeDealPassword(Account account);
+	public boolean cancelDealPassword(Account account);
 }

@@ -35,6 +35,7 @@ public class CredicardLimitSearchAction extends SuperAction implements
 	public String showCreditCard() {
 		account.setClientid(1);
 		session.setAttribute("clientId", 1);
+		//
 		request.setAttribute("accountIdList", accountService.getCdsOfClient(account));
 		return "showCreditCardSearchLimit";
 	}

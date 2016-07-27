@@ -17,6 +17,12 @@
 			<result name="confirmFailedActive">/cdActive/confirmPassword.jsp</result>
 			<result name="confirmSuccessActive">/cdActive/activeSuccess.jsp</result>
 			
+			<!-- 信用卡交易密码设置 -->
+			<result name="showCreditCardDealPasswordSet">/cdDealPassword/showCreditCard.jsp</result>
+			<result name="selectOkDealPassword">/cdDealPassword/confirmPassword.jsp</result>
+			<result name="dealPasswordSetFailed">/cdDealPassword/confirmPassword.jsp</result>
+			<result name="dealPasswordSetSuccess">/cdDealPassword/dealPasswordSetSuccess.jsp</result>
+			
 			<!-- 信用卡积分显示  -->
 			<result name="showCreditCardIntegration">/cdIntegration/showCreditCard.jsp</result>
 			<result name="selectOkIntegration">/cdIntegration/showIntegration.jsp</result>
