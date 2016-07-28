@@ -1,44 +1,40 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+<%@ include file="/bootstrap.jsp"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
 <head>
-<base href="<%=basePath%>">
-
-<title>My JSP 'showCreditCard.jsp' starting page</title>
-
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+<title>信用卡挂失</title>
 </head>
 
 <body>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<!-- 主页  -->
+			</div>
+		</div>
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li><a href="#">信用卡挂失</a></li>
+				<li class="active">选择未挂失的信用卡</li>
+				<li><a href="#">确认网银密码</a></li>
+				<li><a href="#">挂失成功</a></li>
+			</ul>
+			<form action="CreditcardLoss_selectCard.action" id="form">
+				请选择你需要挂失的信用卡: <select name="selectCd">
+					<c:forEach items="${request.accountIdList}" var="li">
+						<option>${li}</option>
+					</c:forEach>
+				</select>
+			</form>
+			<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
+				type="button" class="btn btn-default" value="下一步"
+				onclick="document.getElementById('form').submit();" />
+		</div>
+	</div>
 
-	<form action="CreditcardLoss_selectCard.action">
-
-	<select name="selectCd">
-		<c:forEach items="${request.accountIdList}" var="li">
-
-			<option value=${li}>${li}</option>
-
-		</c:forEach>
-	</select>
-	<button>下一步</button>
-	</form>
-	<button onclick="location.href('index.jsp')">上一步</button>
-	
 </body>
 </html>

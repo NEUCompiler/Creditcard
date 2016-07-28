@@ -1,35 +1,38 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+<%@ include file="/bootstrap.jsp"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
-<title>My JSP 'showCreditCard.jsp' starting page</title>
+<title>信用卡可用额度设置</title>
 </head>
 
 <body>
-
-	<form action="CredicardLimitSet_selectCard.action">
-
-		<select name="selectCd">
-			<c:forEach items="${request.accountIdList}" var="li">
-
-				<option value=${li}>${li}</option>
-
-			</c:forEach>
-		</select>
-		<br/>
-		请输入你要修改的金额：<input type="text" name="cdLimit"/>
-		<button>下一步</button>
-	</form>
-	<button onclick="location.href('index.jsp')">上一步</button>
-
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<!-- 主页  -->
+			</div>
+		</div>
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li><a href="#">信用卡可用额度设置</a></li>
+				<li class="active">选择设置的信用卡</li>
+				<li><a href="#">确认网银密码</a></li>
+				<li><a href="#">可用额度设置成功</a></li>
+			</ul>
+			<form action="CredicardLimitSet_selectCard.action" id="form">
+				请选择你所要设置可用额度的信用卡: <select name="selectCd" class="form-control">
+					<c:forEach items="${request.accountIdList}" var="li">
+						<option>${li}</option>
+					</c:forEach>
+				</select>
+				请输入你要修改的金额：<input class="form-control" type="text" name="cdLimit"/>
+			</form>
+			<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
+				type="button" class="btn btn-default" value="下一步"
+				onclick="document.getElementById('form').submit();" />
+		</div>
+	</div>
 </body>
-</html>

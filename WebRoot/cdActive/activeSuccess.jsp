@@ -1,23 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ include file="/bootstrap.jsp"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<base href="<%=basePath%>">
-
-<title>填写激活信息</title>
-
+<title>信用卡激活</title>
 </head>
 
 <body>
-<div class="container">
+	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<!-- 主页  -->
@@ -35,9 +26,7 @@
 				</div>
 			</div>
 			<div class="col-md-12 column">
-				<p>
-					信用卡:${sessionScope.creditcard}激活成功。
-				</p>
+				<p>信用卡:${sessionScope.creditcard}激活成功。</p>
 			</div>
 		</div>
 	</div>
