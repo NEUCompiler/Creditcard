@@ -6,14 +6,17 @@ import antlr.collections.List;
 
 import com.ob.dao.AccountDAO;
 import com.ob.dao.ClientDAO;
+import com.ob.dao.DealinformDAO;
 import com.ob.model. Account;
 import com.ob.model.Client;
+import com.ob.model.Dealinform;
 import com.ob.service. AccountService;
 import com.ob.service.ClientService;
 
 public class AccountServiceImpl implements  AccountService {
 	private AccountDAO dao;
 	private ClientDAO clientDAO;
+	private DealinformDAO dealinformDAO;
 	
 	@Override
 	public AccountDAO getDao() {
@@ -26,6 +29,14 @@ public class AccountServiceImpl implements  AccountService {
 
 	public void setClientDAO(ClientDAO clientDAO) {
 		this.clientDAO = clientDAO;
+	}
+
+	public DealinformDAO getDealinformDAO() {
+		return dealinformDAO;
+	}
+
+	public void setDealinformDAO(DealinformDAO dealinformDAO) {
+		this.dealinformDAO = dealinformDAO;
 	}
 
 	@Override
@@ -130,14 +141,26 @@ public class AccountServiceImpl implements  AccountService {
 	}
 	
 	/**
-	 * 确认查询密码。
+	 * 确认网银密码。
 	 */
 	@Override
 	public boolean confirmSearchPassword(Client client) {
 		if (client.getUserpassword().equals(clientDAO.findById(client.getClientid()).getUserpassword().toString())) {
 			return true;
 		}
-		
+		return false;
+	}
+	
+	/**
+	 * 确认信用卡查询密码。
+	 */
+	@Override
+	public boolean confirmCDSearchPassword(Account account) {
+		String searchPassword = account.getSearchpassword();
+		account = dao.findById(account.getAccountid());
+		if (searchPassword.equals(account.getSearchpassword())) {
+			return true;
+		}
 		return false;
 	}
 
@@ -202,5 +225,4 @@ public class AccountServiceImpl implements  AccountService {
 		dao.merge(account);
 		return true;
 	}
-	
 }

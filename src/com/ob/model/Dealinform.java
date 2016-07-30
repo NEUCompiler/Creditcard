@@ -105,4 +105,12 @@ public class Dealinform implements java.io.Serializable {
 		this.dealamount = dealamount;
 	}
 
+	@Override
+	public String toString() {
+		return "Dealinform [dealid=" + dealid + ", accountid=" + accountid
+				+ ", dealtime=" + dealtime + ", dealinform=" + dealinform
+				+ ", dealtype=" + dealtype + ", dealDesti=" + dealDesti
+				+ ", dealstate=" + dealstate + ", dealamount=" + dealamount
+				+ "]";
+	}
 }

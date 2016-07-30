@@ -50,9 +50,11 @@
 			<result name="confirmSuccessLimit">/cdLimit/showLimit.jsp</result>
 			
 			<!-- 已出账单查询  -->
-			<result name="showCreditCardBillYet">/cdBillYet/showCreditCardSet.jsp</result>
-			<result name="selectOkBillYet">/cdBillYet/displayBillYet.jsp</result>
-			
+			<result name="showCreditCardBillYet">/cdBillYet/showCreditCard.jsp</result>
+			<result name="selectOkBillYet">/cdBillYet/confirmPassword.jsp</result>
+			<result name="confirmFailedBillYet">/cdBillYet/confirmPassword.jsp</result>
+			<result name="confirmSuccessBillYet">/cdBillYet/displayBillYet.jsp</result>
+		
 		</action>
 	</package>
 </struts>    

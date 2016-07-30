@@ -12,7 +12,14 @@
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<table class="table">
+				<ul class="breadcrumb">
+					<li><a href="#">信用卡激活</a></li>
+					<li><a href="#">选择信用卡</a></li>
+					<li><a href="#">确认查询密码</a></li>
+					<li class="active">查询成功</li>
+				</ul>
+
+				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
 							<th>交易日</th>
@@ -22,15 +29,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${request.accountIdList}" var="li">
-							<option>${li}</option>
+						<c:forEach items="${request.dealInfoList}" var="dealInfo">
+							<tr>
+								<td>${dealInfo.dealtime}</td>
+								<td>${dealInfo.dealamount}</td>
+								<td>${dealInfo.accountid}</td>
+								<td>${dealInfo.dealinform}</td>
+							</tr>
 						</c:forEach>
-						<tr>
-							<td>1</td>
-							<td>TB - Monthly</td>
-							<td>01/04/2012</td>
-							<td>Default</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>

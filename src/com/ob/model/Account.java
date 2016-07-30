@@ -1,5 +1,9 @@
 package com.ob.model;
 
+import java.util.Date;
+
+import javax.xml.crypto.Data;
+
 /**
  * Account entity. @author MyEclipse Persistence Tools
  */

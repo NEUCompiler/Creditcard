@@ -28,6 +28,7 @@
 			<list>
 				<value>Account.hbm.xml</value>
 				<value>Client.hbm.xml</value>
+				<value>Dealinform.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -46,10 +47,16 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="dealinformDAO" class="com.ob.dao.DealinformDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	<bean id="accountService" class="com.ob.service.impl.AccountServiceImpl"
 		scope="singleton">
 		<property name="dao" ref="accountDAO" />
 		<property name="clientDAO" ref="clientDAO" />
+		<property name="dealinformDAO" ref="dealinformDAO" />
 	</bean>
 	<bean id="clientService" class="com.ob.service.impl.ClientServiceImpl"
 		scope="singleton">
@@ -79,8 +86,5 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-	<bean id="DealinformDAO" class="com.ob.dao.DealinformDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean></beans>
+	
+</beans>

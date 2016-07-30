@@ -1,7 +1,13 @@
 package com.ob.action;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 import com.ob.model.Account;
 import com.ob.model.Client;
+import com.ob.model.Dealinform;
 import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -47,6 +53,31 @@ public class CreditCardBillYetAction extends SuperAction implements
 				accountService.getCdsOfClientByActive(account));
 		return "showCreditCardBillYet";
 	}
+	
+	/**
+	 * √‹¬Î»∑»œ°£
+	 * 
+	 * @return
+	 */
+	public String confirmPassword() {
+		account.setAccountid(session.getAttribute("creditcard").toString());
+		account.setSearchpassword(request.getParameter("searchPassword"));
+//		client.setClientid(Integer.parseInt(session.getAttribute("clientId")
+//				.toString()));
+
+		if (!accountService.confirmCDSearchPassword(account)) {
+			return "confirmFailedBillYet";
+		}
+		ArrayList<Dealinform> dealInfoList = new ArrayList<Dealinform>();
+		
+		dealInfoList = (ArrayList<Dealinform>) accountService.getDealinformDAO().findByAccountid(account.getAccountid());
+		
+		request.setAttribute("dealInfoList", dealInfoList);
+		
+		return "confirmSuccessBillYet";
+	}
+	
+	
 	
 	@Override
 	public Account getModel() {
