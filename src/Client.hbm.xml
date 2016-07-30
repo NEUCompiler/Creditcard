@@ -8,19 +8,19 @@
     <class name="com.ob.model.Client" table="client" catalog="onlinebanking">
         <id name="clientid" type="java.lang.Integer">
             <column name="clientid" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <property name="identityid" type="java.lang.Integer">
-            <column name="identityid" not-null="true" />
+        <property name="identityid" type="java.lang.String">
+            <column name="identityid" length="18" not-null="true" />
         </property>
         <property name="truename" type="java.lang.String">
-            <column name="truename" length="10" not-null="true" />
+            <column name="truename" length="50" not-null="true" />
         </property>
         <property name="sex" type="java.lang.Integer">
             <column name="sex" not-null="true" />
         </property>
-        <property name="phone" type="java.lang.Integer">
-            <column name="phone" />
+        <property name="phone" type="java.lang.String">
+            <column name="phone" length="11" />
         </property>
         <property name="mail" type="java.lang.String">
             <column name="mail" length="20" />

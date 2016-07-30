@@ -4,9 +4,8 @@ import com.ob.model.Account;
 import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CredicardDealPasswordSetAction extends SuperAction implements
+public class CredicardSearchPasswordSetAction extends SuperAction implements
 		ModelDriven<Account> {
-
 	/**
 	 * 
 	 */
@@ -17,7 +16,7 @@ public class CredicardDealPasswordSetAction extends SuperAction implements
 	public void setAccountService(AccountService accountService) {
 		this.accountService = accountService;
 	}
-
+	
 	/**
 	 * 交易密码设置。
 	 * 
@@ -28,46 +27,23 @@ public class CredicardDealPasswordSetAction extends SuperAction implements
 		String chPassword = request.getParameter("chPassword");
 		String confirmPassword = request.getParameter("confirmPassword");
 
-		if (!account.getDealpassword().equals(
+		if (!account.getSearchpassword().equals(
 				accountService.getDao().findById(account.getAccountid())
-						.getDealpassword())) {
+						.getSearchpassword())) {
 			request.setAttribute("info", "当前密码输入不正确");
 		} else if (!chPassword.equals(confirmPassword)) {
 			request.setAttribute("info", "两次密码不一致，请重新输入！");
 
-		} else if (!chPassword.matches("^[0-9]{6}$")) {
-			request.setAttribute("info", "密码请输入6个数字");
+		} else if (chPassword.length() > 16) {
+			request.setAttribute("info", "密码请输入小于16个长度字符");
 		} else {
-			account.setDealpassword(Integer.parseInt((chPassword)));
-			accountService.setDealPassword(account);
-			return "dealPasswordSetSuccess";
+			account.setSearchpassword(chPassword);
+			accountService.setSearchPassword(account);
+			return "changeSearchPasswordSuccess";
 		}
-		return "dealPasswordSetFailed";
+		return "changeSearchPasswordFailed";
 	}
 	
-	/**
-	 * 密码确认。
-	 * @return
-	 */
-	public String confirmPassword() {
-		account.setAccountid(session.getAttribute("creditcard").toString());
-		
-		if (!account.getDealpassword().equals(
-				accountService.getDao().findById(account.getAccountid())
-						.getDealpassword())) {
-			request.setAttribute("info", "当前密码输入不正确");
-			return "confirmFailedCancelDPWD";
-		}
-		
-		cancelDealPassword(account);
-		return "confirmSuccessCancelDPWD";
-		
-	}
-	
-	public void cancelDealPassword(Account account) {
-		accountService.cancelDealPassword(account);
-	}
-
 	/**
 	 * 显示信用卡。
 	 * 
@@ -79,9 +55,9 @@ public class CredicardDealPasswordSetAction extends SuperAction implements
 		//
 		request.setAttribute("accountIdList",
 				accountService.getCdsOfClientByActive(account));
-		return "showCreditCardDealPasswordSet";
+		return "showCreditCardSearchPasswordSet";
 	}
-
+	
 	/**
 	 * 选择卡。
 	 * 
@@ -89,16 +65,9 @@ public class CredicardDealPasswordSetAction extends SuperAction implements
 	 */
 	public String selectCard() {
 		session.setAttribute("creditcard", request.getParameter("selectCd"));
-		
-		if ("changeDPWD".equals(request.getParameter("dealPWDOperation"))) {
-			return "selectChangeDealPassword";
-		} else if ("cancelDPWD".equals(request.getParameter("dealPWDOperation"))) {
-			return "selectCancelDealPassword";
-		} 
-		
-		return "selectFaildDealPassword";
+		return "selectSearchPassword";
 	}
-
+	
 	@Override
 	public Account getModel() {
 		if (account == null) {

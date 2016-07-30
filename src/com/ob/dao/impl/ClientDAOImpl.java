@@ -80,6 +80,7 @@ public class ClientDAOImpl implements ClientDAO {
 		try {
 			Client instance = (Client) getCurrentSession().get(
 					"com.ob.model.Client", id);
+			System.out.println(instance);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

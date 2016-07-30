@@ -21,8 +21,8 @@
 					<li>
 						 <a href="CreditcardActive_showCreditCard.action">信用卡激活</a>
 					</li>
-					<li class="disabled">
-						 <a href="credicard_setSearchPassword.action">信用卡查询密码设置</a>
+					<li>
+						 <a href="CredicardSearchPasswordSet_showCreditCard.action">信用卡查询密码设置</a>
 					</li>
 					<li>
 						 <a href="CredicardDealPasswordSet_showCreditCard.action">信用卡交易密码设置</a>
@@ -33,8 +33,8 @@
 					<li>
 						 <a href="CredicardLimitSearch_showCreditCard.action">信用额度查询</a>
 					</li>
-					<li class="disabled">
-						 <a href="credicard_searchHaveBill.action">已出账单查询</a>
+					<li class=>
+						 <a href="CreditCardBillYet_showCreditCard.action">已出账单查询</a>
 					</li>
 					<li class="disabled">
 						 <a href="credicard_searchYetBill.action">未出账单查询</a>
@@ -64,5 +64,6 @@
 	<a href="credicard_searchIntegratel.action">申请进度查询</a></br>
 	</br></br></br></br></br>
       -->
+      <a href="cdBillYet/displayBillYet.jsp">aaa</a>
   </body>
 </html>

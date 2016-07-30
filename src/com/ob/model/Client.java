@@ -9,10 +9,10 @@ public class Client implements java.io.Serializable {
 	// Fields
 
 	private Integer clientid;
-	private Integer identityid;
+	private String identityid;
 	private String truename;
 	private Integer sex;
-	private Integer phone;
+	private String phone;
 	private String mail;
 	private String accounttype;
 	private String username;
@@ -25,9 +25,8 @@ public class Client implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Client(Integer clientid, Integer identityid, String truename,
-			Integer sex, String username, String userpassword) {
-		this.clientid = clientid;
+	public Client(String identityid, String truename, Integer sex,
+			String username, String userpassword) {
 		this.identityid = identityid;
 		this.truename = truename;
 		this.sex = sex;
@@ -36,10 +35,9 @@ public class Client implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Client(Integer clientid, Integer identityid, String truename,
-			Integer sex, Integer phone, String mail, String accounttype,
-			String username, String userpassword) {
-		this.clientid = clientid;
+	public Client(String identityid, String truename, Integer sex,
+			String phone, String mail, String accounttype, String username,
+			String userpassword) {
 		this.identityid = identityid;
 		this.truename = truename;
 		this.sex = sex;
@@ -60,11 +58,11 @@ public class Client implements java.io.Serializable {
 		this.clientid = clientid;
 	}
 
-	public Integer getIdentityid() {
+	public String getIdentityid() {
 		return this.identityid;
 	}
 
-	public void setIdentityid(Integer identityid) {
+	public void setIdentityid(String identityid) {
 		this.identityid = identityid;
 	}
 
@@ -84,11 +82,11 @@ public class Client implements java.io.Serializable {
 		this.sex = sex;
 	}
 
-	public Integer getPhone() {
+	public String getPhone() {
 		return this.phone;
 	}
 
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -124,4 +122,12 @@ public class Client implements java.io.Serializable {
 		this.userpassword = userpassword;
 	}
 
+	@Override
+	public String toString() {
+		return "Client [clientid=" + clientid + ", identityid=" + identityid
+				+ ", truename=" + truename + ", sex=" + sex + ", phone="
+				+ phone + ", mail=" + mail + ", accounttype=" + accounttype
+				+ ", username=" + username + ", userpassword=" + userpassword
+				+ "]";
+	}
 }

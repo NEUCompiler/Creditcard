@@ -20,6 +20,7 @@
 				<li><a href="#">信用卡激活</a></li>
 				<li class="active">选择未激活的信用卡</li>
 				<li><a href="#">确认网银密码</a></li>
+				<li><a href="#">设置查询密码</a></li>
 				<li><a href="#">激活成功</a></li>
 			</ul>
 			<form action="CreditcardActive_selectCard.action" id="form">

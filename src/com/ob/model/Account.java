@@ -8,7 +8,7 @@ public class Account implements java.io.Serializable {
 
 	// Fields
 
-	private Integer accountid;
+	private String accountid;
 	private Integer dealpassword;
 	private Integer amount;
 	private Integer term;
@@ -18,6 +18,9 @@ public class Account implements java.io.Serializable {
 	private Integer isactive;
 	private Integer isopenob;
 	private Integer clientid;
+	private String othername;
+	private String searchpassword;
+	private Integer dealwithoutpassword;
 
 	// Constructors
 
@@ -26,24 +29,24 @@ public class Account implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Account(Integer accountid, Integer dealpassword, Integer amount,
-			Integer isloss, Integer cdlimit, Integer integrate, Integer isactive,
-			Integer isopenob, Integer clientid) {
+	public Account(String accountid, Integer dealpassword, Integer amount,
+			Integer isloss, Integer cdlimit, Integer isopenob,
+			Integer clientid, Integer dealwithoutpassword) {
 		this.accountid = accountid;
 		this.dealpassword = dealpassword;
 		this.amount = amount;
 		this.isloss = isloss;
 		this.cdlimit = cdlimit;
-		this.integrate = integrate;
-		this.isactive = isactive;
 		this.isopenob = isopenob;
 		this.clientid = clientid;
+		this.dealwithoutpassword = dealwithoutpassword;
 	}
 
 	/** full constructor */
-	public Account(Integer accountid, Integer dealpassword, Integer amount,
+	public Account(String accountid, Integer dealpassword, Integer amount,
 			Integer term, Integer isloss, Integer cdlimit, Integer integrate,
-			Integer isactive, Integer isopenob, Integer clientid) {
+			Integer isactive, Integer isopenob, Integer clientid,
+			String othername, String searchpassword, Integer dealwithoutpassword) {
 		this.accountid = accountid;
 		this.dealpassword = dealpassword;
 		this.amount = amount;
@@ -54,15 +57,18 @@ public class Account implements java.io.Serializable {
 		this.isactive = isactive;
 		this.isopenob = isopenob;
 		this.clientid = clientid;
+		this.othername = othername;
+		this.searchpassword = searchpassword;
+		this.dealwithoutpassword = dealwithoutpassword;
 	}
 
 	// Property accessors
 
-	public Integer getAccountid() {
+	public String getAccountid() {
 		return this.accountid;
 	}
 
-	public void setAccountid(Integer accountid) {
+	public void setAccountid(String accountid) {
 		this.accountid = accountid;
 	}
 
@@ -99,7 +105,7 @@ public class Account implements java.io.Serializable {
 	}
 
 	public Integer getCdlimit() {
-		return cdlimit;
+		return this.cdlimit;
 	}
 
 	public void setCdlimit(Integer cdlimit) {
@@ -138,14 +144,41 @@ public class Account implements java.io.Serializable {
 		this.clientid = clientid;
 	}
 
+	public String getOthername() {
+		return this.othername;
+	}
+
+	public void setOthername(String othername) {
+		this.othername = othername;
+	}
+
+	public String getSearchpassword() {
+		return this.searchpassword;
+	}
+
+	public void setSearchpassword(String searchpassword) {
+		this.searchpassword = searchpassword;
+	}
+
+	public Integer getDealwithoutpassword() {
+		return this.dealwithoutpassword;
+	}
+
+	public void setDealwithoutpassword(Integer dealwithoutpassword) {
+		this.dealwithoutpassword = dealwithoutpassword;
+	}
+
 	@Override
 	public String toString() {
 		return "Account [accountid=" + accountid + ", dealpassword="
 				+ dealpassword + ", amount=" + amount + ", term=" + term
-				+ ", isloss=" + isloss + ", cdlimit=" + cdlimit + ", integrate="
-				+ integrate + ", isactive=" + isactive + ", isopenob="
-				+ isopenob + ", clientid=" + clientid + "]";
+				+ ", isloss=" + isloss + ", cdlimit=" + cdlimit
+				+ ", integrate=" + integrate + ", isactive=" + isactive
+				+ ", isopenob=" + isopenob + ", clientid=" + clientid
+				+ ", othername=" + othername + ", searchpassword="
+				+ searchpassword + ", dealwithoutpassword="
+				+ dealwithoutpassword + "]";
 	}
-	
+
 	
 }

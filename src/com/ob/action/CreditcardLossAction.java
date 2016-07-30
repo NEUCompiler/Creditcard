@@ -1,13 +1,13 @@
 package com.ob.action;
 
-
 import com.ob.model.Account;
 import com.ob.model.Client;
 import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CreditcardLossAction extends SuperAction implements ModelDriven<Account> {
-	
+public class CreditcardLossAction extends SuperAction implements
+		ModelDriven<Account> {
+
 	/**
 	 * 
 	 */
@@ -15,7 +15,7 @@ public class CreditcardLossAction extends SuperAction implements ModelDriven<Acc
 	private Account account;
 	private Client client = new Client();
 	private AccountService accountService;
-	
+
 	public AccountService getAccountService() {
 		return accountService;
 	}
@@ -26,60 +26,60 @@ public class CreditcardLossAction extends SuperAction implements ModelDriven<Acc
 
 	/**
 	 * 信用卡挂失设置。
+	 * 
 	 * @return
 	 */
-	public String loss() {
-		account.setAccountid(Integer.parseInt(session.getAttribute("creditcard").toString()));
-		
-		if (accountService.isLoss(account)) {
-			return "lossFaild";
-		} 
-		
+	public void loss() {
+		account.setAccountid(session.getAttribute("creditcard").toString());
 		accountService.setLoss(account);
-		return "lossSuccess";
 	}
-	
+
 	/**
 	 * 显示信用卡。
+	 * 
 	 * @return
 	 */
 	public String showCreditCard() {
 		account.setClientid(1);
 		session.setAttribute("clientId", 1);
-		request.setAttribute("accountIdList", accountService.getCdsOfClientByLoss(account));
+		request.setAttribute("accountIdList",
+				accountService.getCdsOfClientByLoss(account));
 		return "showCreditCardLoss";
 	}
-	
+
 	/**
 	 * 密码确认。
+	 * 
 	 * @return
 	 */
 	public String confirmPassword() {
 		client.setUserpassword(request.getParameter("accountPassword"));
-		client.setClientid(Integer.parseInt(session.getAttribute("clientId").toString()));
-			
+		client.setClientid(Integer.parseInt(session.getAttribute("clientId")
+				.toString()));
+
 		if (!accountService.confirmSearchPassword(client)) {
 			return "confirmFailedLoss";
 		}
 		loss();
 		return "confirmSuccessLoss";
 	}
-	
+
 	/**
 	 * 选择卡。
+	 * 
 	 * @return
 	 */
 	public String selectCard() {
 		session.setAttribute("creditcard", request.getParameter("selectCd"));
 		return "selectOkLoss";
 	}
-	
-	 @Override
-    public Account getModel() {
 
-       if(account == null){
-    	   account = new Account();
-       }
-       return account;
-    }
+	@Override
+	public Account getModel() {
+
+		if (account == null) {
+			account = new Account();
+		}
+		return account;
+	}
 }

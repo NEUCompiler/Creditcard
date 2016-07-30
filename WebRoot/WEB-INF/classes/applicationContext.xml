@@ -79,4 +79,8 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-</beans>
+	<bean id="DealinformDAO" class="com.ob.dao.DealinformDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>

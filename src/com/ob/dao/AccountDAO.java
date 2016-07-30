@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ob.model.Account;
 
+
 @Transactional
 public interface AccountDAO {
 
@@ -21,7 +22,7 @@ public interface AccountDAO {
 
 	public void delete(Account persistentInstance);
 
-	public Account findById(java.lang.Integer id);
+	public Account findById(java.lang.String id);
 
 	public List findByExample(Account instance);
 
@@ -35,7 +36,7 @@ public interface AccountDAO {
 
 	public List findByIsloss(Object isloss);
 
-	public List findByLimit(Object limit);
+	public List findByCdlimit(Object cdlimit);
 
 	public List findByIntegrate(Object integrate);
 
@@ -43,7 +44,13 @@ public interface AccountDAO {
 
 	public List findByIsopenob(Object isopenob);
 
-	public List<Account> findByClientid(Object clientid);
+	public List findByClientid(Object clientid);
+
+	public List findByOthername(Object othername);
+
+	public List findBySearchpassword(Object searchpassword);
+
+	public List findByDealwithoutpassword(Object dealwithoutpassword);
 
 	public List findAll();
 

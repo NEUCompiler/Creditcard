@@ -13,8 +13,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ob.model.Client;
-
-
 @Transactional
 public interface ClientDAO {
 
@@ -51,5 +49,4 @@ public interface ClientDAO {
 	public void attachDirty(Client instance);
 
 	public void attachClean(Client instance);
-	
 }

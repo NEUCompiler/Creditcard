@@ -22,7 +22,7 @@ public class CredicardLimitSearchAction extends SuperAction implements
 	 * @return
 	 */
 	public String search() {
-		account.setAccountid(Integer.parseInt(request.getParameter("selectCd").toString()));
+		account.setAccountid(request.getParameter("selectCd").toString());
 		request.setAttribute("cdLimit", accountService.getLimit(account));
 		
 		return "selectOkLimit";

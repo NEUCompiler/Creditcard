@@ -23,7 +23,7 @@ public class CreditcardActiveAction extends SuperAction implements
 	 * 信用卡激活。
 	 */
 	public void active() {
-		account.setAccountid(Integer.parseInt(session.getAttribute("creditcard").toString()));
+		account.setAccountid(session.getAttribute("creditcard").toString());
 		accountService.setActive(account);
 	}
 	
@@ -34,7 +34,7 @@ public class CreditcardActiveAction extends SuperAction implements
 	public String showCreditCard() {
 		account.setClientid(1);
 		session.setAttribute("clientId", 1);
-		request.setAttribute("accountIdList", accountService.getCdsOfClientByActive(account));
+		request.setAttribute("accountIdList", accountService.getCdsOfClientByNotActive(account));
 		return "showCreditCardActive";
 	}
 	
@@ -49,20 +49,50 @@ public class CreditcardActiveAction extends SuperAction implements
 	}
 	
 	/**
-	 * 密码确认。
+	 * 设置交易密码。
 	 * @return
 	 */
-	public String confirmPassword() {
-		client.setUserpassword(request.getParameter("accountPassword"));
-		client.setClientid(Integer.parseInt(session.getAttribute("clientId").toString()));
-			
-		if (!accountService.confirmSearchPassword(client)) {
-			return "confirmFailedActive";
+	public String setDealPassword() {
+		account.setAccountid(session.getAttribute("creditcard").toString());
+		String dealPassword = request.getParameter("dealPassword");
+		String confirmPassword = request.getParameter("confirmPassword");
+
+		if (!dealPassword.equals(confirmPassword)) {
+			request.setAttribute("info", "两次密码不一致，请重新输入！");
+
+		} else if (!dealPassword.matches("^[0-9]{6}$")) {
+			request.setAttribute("info", "密码请输入6个数字");
+		} else {
+			account.setDealpassword(Integer.parseInt((dealPassword)));
+			accountService.setDealPassword(account);
+			return "dealPasswordSetSuccessActive";
 		}
-		
-		active();
-		return "confirmSuccessActive";
+		return "dealPasswordSetFailedActive";
 	}
+	
+	/**
+	 * 设置查询密码。
+	 * @return
+	 */
+	public String setSearchPassword() {
+		account.setAccountid(session.getAttribute("creditcard").toString());
+		String searchPassword = request.getParameter("searchPassword");
+		String confirmPassword = request.getParameter("confirmPassword");
+
+		if (!searchPassword.equals(confirmPassword)) {
+			request.setAttribute("info", "两次密码不一致，请重新输入！");
+
+		} else if (searchPassword.length() > 16) {
+			request.setAttribute("info", "密码请输入小于16个长度字符");
+		} else {
+			account.setSearchpassword(searchPassword);
+			accountService.setSearchPassword(account);
+			active();
+			return "searchPasswordSetSuccessActive";
+		}
+		return "searchPasswordSetFailedActive";
+	}
+	
 	
 	@Override
 	public Account getModel() {

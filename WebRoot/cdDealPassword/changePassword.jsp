@@ -27,12 +27,26 @@
 			</div>
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
-					action=CredicardDealPasswordSet_confirmPassword.action>
+					action=CredicardDealPasswordSet_setPassword.action>
 					<div class="form-group">
-						<label for="dealpassword" class="col-sm-2 control-label">请输入交易密码:</label>
+						<label for="dealpassword" class="col-sm-2 control-label">请输入你当前的交易密码:</label>
 						<div class="col-sm-10">
 							<input class="form-control" id="dealpassword" type="password"
 								name="dealpassword" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="chPassword" class="col-sm-2 control-label">请输入要设的密码:</label>
+						<div class="col-sm-10">
+							<input class="form-control" id="chPassword" type="password"
+								name="chPassword" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="confirmPassword" class="col-sm-2 control-label">请确认要设的密码:</label>
+						<div class="col-sm-10">
+							<input class="form-control" id="confirmPassword" type="password"
+								name="confirmPassword" />
 						</div>
 					</div>
 					<div class="col-md-12 column">${request.info}</div>

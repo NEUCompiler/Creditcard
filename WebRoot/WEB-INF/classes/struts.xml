@@ -13,13 +13,25 @@
 			
 			<!-- 信用卡激活   -->
 			<result name="showCreditCardActive">/cdActive/showCreditCard.jsp</result>
-			<result name="selectOkActive">/cdActive/confirmPassword.jsp</result>
-			<result name="confirmFailedActive">/cdActive/confirmPassword.jsp</result>
-			<result name="confirmSuccessActive">/cdActive/activeSuccess.jsp</result>
+			<result name="selectOkActive">/cdActive/setDealPassword.jsp</result>
+			<result name="dealPasswordSetFailedActive">/cdActive/setDealPassword.jsp</result>
+			<result name="dealPasswordSetSuccessActive">/cdActive/setSearchPassword.jsp</result>
+			<result name="searchPasswordSetFailedActive">/cdActive/setSearchPassword.jsp</result>
+			<result name="searchPasswordSetSuccessActive">/cdActive/activeSuccess.jsp</result>
+			
+			<!-- 信用卡查询密码设置  -->
+			<result name="showCreditCardSearchPasswordSet">/cdSearchPassword/showCreditCard.jsp</result>
+			<result name="selectSearchPassword">/cdSearchPassword/changePassword.jsp</result>
+			<result name="changeSearchPasswordFailed">/cdSearchPassword/changePassword.jsp</result>
+			<result name="changeSearchPasswordSuccess">/cdSearchPassword/changeSearchPasswordSuccess.jsp</result>
 			
 			<!-- 信用卡交易密码设置 -->
 			<result name="showCreditCardDealPasswordSet">/cdDealPassword/showCreditCard.jsp</result>
-			<result name="selectOkDealPassword">/cdDealPassword/confirmPassword.jsp</result>
+			<result name="selectChangeDealPassword">/cdDealPassword/changePassword.jsp</result>
+			<result name="selectCancelDealPassword">/cdDealPassword/confirmPassword.jsp</result>
+			<result name="confirmFailedCancelDPWD">/cdDealPassword/confirmPassword.jsp</result>
+			<result name="confirmSuccessCancelDPWD">/cdDealPassword/cancelDPWDSuccess.jsp</result>
+			<result name="selectFaildDealPassword">/cdDealPassword/showCreditCard.jsp</result>
 			<result name="dealPasswordSetFailed">/cdDealPassword/confirmPassword.jsp</result>
 			<result name="dealPasswordSetSuccess">/cdDealPassword/dealPasswordSetSuccess.jsp</result>
 			
@@ -36,6 +48,9 @@
 			<result name="selectOkLimitSet">/cdLimit/confirmPassword.jsp</result>
 			<result name="confirmFailedLimit">/cdLimit/confirmPassword.jsp</result>
 			<result name="confirmSuccessLimit">/cdLimit/showLimit.jsp</result>
+			
+			<!-- 已出账单查询  -->
+			<result name="selectOkBillYet">/cdBillYet/displayBillYet.jsp</result>
 			
 			
 		</action>

@@ -27,18 +27,6 @@ public class AccountServiceImpl implements  AccountService {
 	public void setClientDAO(ClientDAO clientDAO) {
 		this.clientDAO = clientDAO;
 	}
-	
-	@Override
-	public boolean isLoss(Account account) {
-		account = dao.findById(account.getAccountid());
-		
-		System.out.println(account);
-		
-		if (account.getIsloss() == 0) {
-			return false;
-		}
-		return true;
-	}
 
 	@Override
 	public boolean setLoss(Account account) {
@@ -71,8 +59,8 @@ public class AccountServiceImpl implements  AccountService {
 	}
 	
 	@Override
-	public ArrayList<Integer> getCdsOfClient(Account account) {
-		ArrayList<Integer> accountIdList = new ArrayList<Integer>();
+	public ArrayList<String> getCdsOfClient(Account account) {
+		ArrayList<String> accountIdList = new ArrayList<String>();
 		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
 		
 		for (Account item : accounts) {
@@ -84,8 +72,8 @@ public class AccountServiceImpl implements  AccountService {
 
 	
 	@Override
-	public ArrayList<Integer> getCdsOfClientByLoss(Account account) {
-		ArrayList<Integer> accountIdList = new ArrayList<Integer>();
+	public ArrayList<String> getCdsOfClientByLoss(Account account) {
+		ArrayList<String> accountIdList = new ArrayList<String>();
 		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
 		
 		for (Account item : accounts) {
@@ -99,8 +87,23 @@ public class AccountServiceImpl implements  AccountService {
 	}
 	
 	@Override
-	public ArrayList<Integer> getCdsOfClientByActive(Account account) {
-		ArrayList<Integer> accountIdList = new ArrayList<Integer>();
+	public ArrayList<String> getCdsOfClientByActive(Account account) {
+		ArrayList<String> accountIdList = new ArrayList<String>();
+		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
+		
+		for (Account item : accounts) {
+			
+			if (item.getIsactive() == 1) {
+				accountIdList.add(item.getAccountid());
+			}
+		}
+		
+		return accountIdList;
+	}
+	
+	@Override
+	public ArrayList<String> getCdsOfClientByNotActive(Account account) {
+		ArrayList<String> accountIdList = new ArrayList<String>();
 		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
 		
 		for (Account item : accounts) {
@@ -110,6 +113,19 @@ public class AccountServiceImpl implements  AccountService {
 			}
 		}
 		
+		return accountIdList;
+	}
+	
+	@Override
+	public ArrayList<String> getCdsOfClientByCancelDPWD(Account account) {
+		ArrayList<String> accountIdList = new ArrayList<String>();
+		ArrayList<Account> accounts = (ArrayList<Account>)dao.findByClientid(account.getClientid());
+		
+		for (Account item : accounts) {
+			if (item.getDealwithoutpassword() == 0) {
+				accountIdList.add(item.getAccountid());
+			}
+		}
 		return accountIdList;
 	}
 	
@@ -162,19 +178,35 @@ public class AccountServiceImpl implements  AccountService {
 		account  = dao.findById(account.getAccountid());
 		account.setDealpassword(dealPassword);
 		dao.merge(account);
-		return false;
+		return true;
+	}
+	
+	@Override
+	public boolean setSearchPassword(Account account) {
+		String searchPassword = account.getSearchpassword();
+		account  = dao.findById(account.getAccountid());
+		account.setSearchpassword(searchPassword);
+		dao.merge(account);
+		return true;
 	}
 
 	@Override
 	public boolean changeDealPassword(Account account) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean cancelDealPassword(Account account) {
-		// TODO Auto-generated method stub
-		return false;
+		account = dao.findById(account.getAccountid());
+		account.setDealwithoutpassword(1);
+		dao.merge(account);
+		return true;
 	}
+
+	
+
+	
+
+	
 	
 }

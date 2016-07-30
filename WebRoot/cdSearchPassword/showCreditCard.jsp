@@ -4,9 +4,8 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-
 <head>
-<title>信用卡挂失</title>
+<title>信用卡查询密码修改</title>
 </head>
 
 <body>
@@ -18,14 +17,13 @@
 		</div>
 		<div class="col-md-12 column">
 			<ul class="breadcrumb">
-				<li><a href="#">信用卡挂失</a></li>
-				<li class="active">选择未挂失的信用卡</li>
-				<li><a href="#">确认网银密码</a></li>
-				<li><a href="#">挂失成功</a></li>
+				<li><a href="#">查询密码修改</a></li>
+				<li class="active">选择信用卡</li>
+				<li><a href="#">密码设置</a></li>
+				<li><a href="#">查询密码修改成功</a></li>
 			</ul>
-			<form action="CreditcardLoss_selectCard.action" id="form">
-				请选择你需要挂失的信用卡: <select name="selectCd" class="form-control"
-					class="form-control">
+			<form action="CredicardSearchPasswordSet_selectCard.action" id="form">
+				请选择信用卡: <select name="selectCd" class="form-control">
 					<c:forEach items="${request.accountIdList}" var="li">
 						<option>${li}</option>
 					</c:forEach>
@@ -36,6 +34,5 @@
 				onclick="document.getElementById('form').submit();" />
 		</div>
 	</div>
-
 </body>
 </html>

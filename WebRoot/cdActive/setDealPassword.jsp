@@ -20,20 +20,27 @@
 					<ul class="breadcrumb">
 						<li><a href="#">信用卡激活</a></li>
 						<li><a href="CreditcardActive_showCreditCard.action">选择未激活的信用卡</a></li>
-						<li class="active">确认网银密码</li>
+						<li class="active">设置网银密码</li>
+						<li><a href="#">设置查询密码</a></li>
 						<li><a href="#">激活成功</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
-					action=CreditcardActive_confirmPassword.action>
+					action=CreditcardActive_setDealPassword.action>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">请输入网银密码:</label>
+						<label for="dealPassword" class="col-sm-2 control-label">请设置网银密码:</label>
 						<div class="col-sm-10">
-							<input class="form-control" id="accountPassword" type="password"
-								name="accountPassword" />
+							<input class="form-control" id="dealPassword" type="password"
+								name="dealPassword" />
 						</div>
+						<label for="confirmPassword" class="col-sm-2 control-label">请确认网银密码:</label>
+						<div class="col-sm-10">
+							<input class="form-control" id="confirmPassword" type="password"
+								name="confirmPassword" />
+						</div>
+						<div class="col-md-12 column">${request.info}</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">

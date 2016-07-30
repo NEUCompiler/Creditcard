@@ -26,6 +26,9 @@ public class AccountDAOImpl implements AccountDAO {
 	public static final String ISACTIVE = "isactive";
 	public static final String ISOPENOB = "isopenob";
 	public static final String CLIENTID = "clientid";
+	public static final String OTHERNAME = "othername";
+	public static final String SEARCHPASSWORD = "searchpassword";
+	public static final String DEALWITHOUTPASSWORD = "dealwithoutpassword";
 
 	private SessionFactory sessionFactory;
 
@@ -63,7 +66,7 @@ public class AccountDAOImpl implements AccountDAO {
 		}
 	}
 
-	public Account findById(java.lang.Integer id) {
+	public Account findById(java.lang.String id) {
 		log.debug("getting Account instance with id: " + id);
 		try {
 			Account instance = (Account) getCurrentSession().get(
@@ -121,7 +124,7 @@ public class AccountDAOImpl implements AccountDAO {
 		return findByProperty(ISLOSS, isloss);
 	}
 
-	public List findByLimit(Object cdlimit) {
+	public List findByCdlimit(Object cdlimit) {
 		return findByProperty(CDLIMIT, cdlimit);
 	}
 
@@ -141,7 +144,19 @@ public class AccountDAOImpl implements AccountDAO {
 		return findByProperty(CLIENTID, clientid);
 	}
 
-	public List<Account> findAll() {
+	public List findByOthername(Object othername) {
+		return findByProperty(OTHERNAME, othername);
+	}
+
+	public List findBySearchpassword(Object searchpassword) {
+		return findByProperty(SEARCHPASSWORD, searchpassword);
+	}
+
+	public List findByDealwithoutpassword(Object dealwithoutpassword) {
+		return findByProperty(DEALWITHOUTPASSWORD, dealwithoutpassword);
+	}
+
+	public List findAll() {
 		log.debug("finding all Account instances");
 		try {
 			String queryString = "from Account";

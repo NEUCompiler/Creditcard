@@ -27,6 +27,9 @@
 					<c:forEach items="${request.accountIdList}" var="li">
 						<option>${li}</option>
 					</c:forEach>
+				</select> 请选择操作: <select name="dealPWDOperation" class="form-control">
+					<option value="changeDPWD">交易密码修改</option>
+					<option value="cancelDPWD">取消交易密码</option>
 				</select>
 			</form>
 			<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input

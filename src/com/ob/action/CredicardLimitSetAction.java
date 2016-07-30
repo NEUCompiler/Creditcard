@@ -26,7 +26,7 @@ public class CredicardLimitSetAction extends SuperAction implements
 	 * @return
 	 */
 	public void set() {
-		account.setAccountid(Integer.parseInt(session.getAttribute("creditcard").toString()));
+		account.setAccountid(session.getAttribute("creditcard").toString());
 		account.setCdlimit(Integer.parseInt(session.getAttribute("cdLimit").toString()));
 		accountService.setLimit(account);
 		request.setAttribute("cdLimit", accountService.getLimit(account));
