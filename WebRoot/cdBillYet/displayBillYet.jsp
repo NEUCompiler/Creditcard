@@ -1,108 +1,40 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="/bootstrap.jsp"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>信用卡激活</title>
+<title>信用卡已出账单查询</title>
 </head>
 
 <body>
 	<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							编号
-						</th>
-						<th>
-							产品
-						</th>
-						<th>
-							交付时间
-						</th>
-						<th>
-							状态
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Default
-						</td>
-					</tr>
-					<tr class="success">
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Approved
-						</td>
-					</tr>
-					<tr class="error">
-						<td>
-							2
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							02/04/2012
-						</td>
-						<td>
-							Declined
-						</td>
-					</tr>
-					<tr class="warning">
-						<td>
-							3
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							03/04/2012
-						</td>
-						<td>
-							Pending
-						</td>
-					</tr>
-					<tr class="info">
-						<td>
-							4
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							04/04/2012
-						</td>
-						<td>
-							Call in to confirm
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>交易日</th>
+							<th>交易金额</th>
+							<th>卡号后四位</th>
+							<th>交易描述</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${request.accountIdList}" var="li">
+							<option>${li}</option>
+						</c:forEach>
+						<tr>
+							<td>1</td>
+							<td>TB - Monthly</td>
+							<td>01/04/2012</td>
+							<td>Default</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>

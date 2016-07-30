@@ -44,8 +44,8 @@ public class CreditCardBillYetAction extends SuperAction implements
 		account.setClientid(1);
 		session.setAttribute("clientId", 1);
 		request.setAttribute("accountIdList",
-				accountService.getCdsOfClientByLoss(account));
-		return "selectOkBillYet";
+				accountService.getCdsOfClientByActive(account));
+		return "showCreditCardBillYet";
 	}
 	
 	@Override
