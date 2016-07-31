@@ -5,7 +5,7 @@
 		<action name="*_*" class="com.ob.action.{1}Action"
 			method="{2}">
             <!-- 信用卡挂失  -->
-			<result>/cdloss/cdloss.jsp</result>
+			<result>/CreditCard/cdloss/cdloss.jsp</result>
 			<result name="showCreditCardLoss">/CreditCard/cdloss/showCreditCard.jsp</result>
 			<result name="selectOkLoss">/CreditCard/cdloss/confirmPassword.jsp</result>
 			<result name="confirmFailedLoss">/CreditCard/cdloss/confirmPassword.jsp</result>
