@@ -11,20 +11,15 @@
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<!-- 主页  -->
+				<ul class="breadcrumb">
+					<li><a href="#">交易密码修改</a></li>
+					<li><a href="#">选择信用卡</a></li>
+					<li class="active">密码设置</li>
+					<li><a href="#">交易密码修改成功</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-					<ul class="breadcrumb">
-						<li><a href="#">交易密码修改</a></li>
-						<li><a href="#">选择信用卡</a></li>
-						<li class="active">密码设置</li>
-						<li><a href="#">交易密码修改成功</a></li>
-					</ul>
-				</div>
-			</div>
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
 					action=CreditcardDealPasswordSet_setPassword.action>

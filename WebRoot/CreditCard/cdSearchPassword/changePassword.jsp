@@ -10,11 +10,6 @@
 <body>
 	<div class="container">
 		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<!-- 主页  -->
-			</div>
-		</div>
-		<div class="row clearfix">
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<ul class="breadcrumb">

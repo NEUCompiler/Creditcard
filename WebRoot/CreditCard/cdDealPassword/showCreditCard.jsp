@@ -12,29 +12,26 @@
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<!-- 主页  -->
+				<ul class="breadcrumb">
+					<li><a href="#">交易密码修改</a></li>
+					<li class="active">选择信用卡</li>
+					<li><a href="#">密码设置</a></li>
+					<li><a href="#">交易密码修改成功</a></li>
+				</ul>
+				<form action="CreditcardDealPasswordSet_selectCard.action" id="form">
+					请选择信用卡: <select name="selectCd" class="form-control">
+						<c:forEach items="${request.accountIdList}" var="li">
+							<option>${li}</option>
+						</c:forEach>
+					</select> 请选择操作: <select name="dealPWDOperation" class="form-control">
+						<option value="changeDPWD">交易密码修改</option>
+						<option value="cancelDPWD">取消交易密码</option>
+					</select>
+				</form>
+				<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
+					type="button" class="btn btn-default" value="下一步"
+					onclick="document.getElementById('form').submit();" />
 			</div>
-		</div>
-		<div class="col-md-12 column">
-			<ul class="breadcrumb">
-				<li><a href="#">交易密码修改</a></li>
-				<li class="active">选择信用卡</li>
-				<li><a href="#">密码设置</a></li>
-				<li><a href="#">交易密码修改成功</a></li>
-			</ul>
-			<form action="CreditcardDealPasswordSet_selectCard.action" id="form">
-				请选择信用卡: <select name="selectCd" class="form-control">
-					<c:forEach items="${request.accountIdList}" var="li">
-						<option>${li}</option>
-					</c:forEach>
-				</select> 请选择操作: <select name="dealPWDOperation" class="form-control">
-					<option value="changeDPWD">交易密码修改</option>
-					<option value="cancelDPWD">取消交易密码</option>
-				</select>
-			</form>
-			<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
-				type="button" class="btn btn-default" value="下一步"
-				onclick="document.getElementById('form').submit();" />
 		</div>
 	</div>
 </body>

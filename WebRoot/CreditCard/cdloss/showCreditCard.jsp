@@ -13,29 +13,25 @@
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<!-- 主页  -->
+				<ul class="breadcrumb">
+					<li><a href="#">信用卡挂失</a></li>
+					<li class="active">选择未挂失的信用卡</li>
+					<li><a href="#">确认网银密码</a></li>
+					<li><a href="#">挂失成功</a></li>
+				</ul>
+				<form action="CreditcardLoss_selectCard.action" id="form">
+					请选择你需要挂失的信用卡: <select name="selectCd" class="form-control"
+						class="form-control">
+						<c:forEach items="${request.accountIdList}" var="li">
+							<option>${li}</option>
+						</c:forEach>
+					</select>
+				</form>
+				<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
+					type="button" class="btn btn-default" value="下一步"
+					onclick="document.getElementById('form').submit();" />
 			</div>
 		</div>
-		<div class="col-md-12 column">
-			<ul class="breadcrumb">
-				<li><a href="#">信用卡挂失</a></li>
-				<li class="active">选择未挂失的信用卡</li>
-				<li><a href="#">确认网银密码</a></li>
-				<li><a href="#">挂失成功</a></li>
-			</ul>
-			<form action="CreditcardLoss_selectCard.action" id="form">
-				请选择你需要挂失的信用卡: <select name="selectCd" class="form-control"
-					class="form-control">
-					<c:forEach items="${request.accountIdList}" var="li">
-						<option>${li}</option>
-					</c:forEach>
-				</select>
-			</form>
-			<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
-				type="button" class="btn btn-default" value="下一步"
-				onclick="document.getElementById('form').submit();" />
-		</div>
 	</div>
-
 </body>
 </html>

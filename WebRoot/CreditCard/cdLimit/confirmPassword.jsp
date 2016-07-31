@@ -10,12 +10,6 @@
 <body>
 	<div class="container">
 		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<!-- 主页  -->
-			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<ul class="breadcrumb">
 						<li><a href="#">信用卡可用额度设置</a></li>
@@ -25,24 +19,25 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-12 column">
-				<form class="form-horizontal" role="form"
-					action=CreditcardLimitSet_confirmPassword.action>
-					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">请输入网银密码:</label>
-						<div class="col-sm-10">
-							<input class="form-control" id="accountPassword" type="password"
-								name="accountPassword" />
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<form class="form-horizontal" role="form"
+						action=CreditcardLimitSet_confirmPassword.action>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">请输入网银密码:</label>
+							<div class="col-sm-10">
+								<input class="form-control" id="accountPassword" type="password"
+									name="accountPassword" />
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">确认</button>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default">确认</button>
+							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>
