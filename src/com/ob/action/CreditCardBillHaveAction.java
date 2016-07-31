@@ -1,18 +1,12 @@
 package com.ob.action;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 import com.ob.model.Account;
 import com.ob.model.Client;
-import com.ob.model.Dealinform;
 import com.ob.service.AccountService;
 import com.ob.service.DealinformService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CreditCardBillYetAction extends SuperAction implements
+public class CreditCardBillHaveAction extends SuperAction implements
 		ModelDriven<Account> {
 
 	/**
@@ -27,7 +21,7 @@ public class CreditCardBillYetAction extends SuperAction implements
 	public void setAccountService(AccountService accountService) {
 		this.accountService = accountService;
 	}
-	
+
 	public void setDealinformService(DealinformService dealinformService) {
 		this.dealinformService = dealinformService;
 	}
@@ -39,7 +33,7 @@ public class CreditCardBillYetAction extends SuperAction implements
 	 */
 	public String selectCard() {
 		session.setAttribute("creditcard", request.getParameter("selectCd"));
-		return "selectOkBillYet";
+		return "selectOkBillHave";
 	}
 
 	/**
@@ -52,7 +46,7 @@ public class CreditCardBillYetAction extends SuperAction implements
 		session.setAttribute("clientId", 1);
 		request.setAttribute("accountIdList",
 				accountService.getCdsOfClientByActive(account));
-		return "showCreditCardBillYet";
+		return "showCreditCardBillHave";
 	}
 
 	/**
@@ -65,12 +59,13 @@ public class CreditCardBillYetAction extends SuperAction implements
 		account.setSearchpassword(request.getParameter("searchPassword"));
 
 		if (!accountService.confirmCDSearchPassword(account)) {
-			return "confirmFailedBillYet";
+			return "confirmFailedBillHave";
 		}
-		
-		request.setAttribute("dealInfoList", dealinformService.getBillYetDealInfo(account.getAccountid()));
 
-		return "confirmSuccessBillYet";
+		request.setAttribute("dealInfoList",
+				dealinformService.getBillHaveDealInfo(account.getAccountid()));
+
+		return "confirmSuccessBillHave";
 	}
 
 	@Override
@@ -82,3 +77,4 @@ public class CreditCardBillYetAction extends SuperAction implements
 		return account;
 	}
 }
+

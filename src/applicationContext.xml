@@ -47,7 +47,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="dealinformDAO" class="com.ob.dao.DealinformDAO">
+	<bean id="dealinformDAO" class="com.ob.dao.impl.DealinformDAOImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -61,6 +61,10 @@
 	<bean id="clientService" class="com.ob.service.impl.ClientServiceImpl"
 		scope="singleton">
 		<property name="clientDAO" ref="clientDAO" />
+	</bean>
+	<bean id="dealinformService" class="com.ob.service.impl.DealinformServiceImpl"
+		scope="singleton">
+		<property name="dealinformDAO" ref="dealinformDAO" />
 	</bean>
 	<bean id="creadicardLossAction" class="com.ob.action.CreditcardLossAction"
 		scope="prototype">
@@ -86,5 +90,19 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-	
+	<bean id="credicardSearchPasswordSetAction" class="com.ob.action.CredicardSearchPasswordSetAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+	</bean>
+	<bean id="creditCardBillYetAction" class="com.ob.action.CreditCardBillYetAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+		<property name="dealinformService" ref="dealinformService"></property>
+	</bean>
+	<bean id="creditCardBillHaveAction" class="com.ob.action.CreditCardBillHaveAction"
+		scope="prototype">
+		<property name="accountService" ref="accountService"></property>
+		<property name="dealinformService" ref="dealinformService"></property>
+	</bean>
+
 </beans>

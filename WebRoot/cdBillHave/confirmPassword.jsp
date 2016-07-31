@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>信用卡查询未出账单</title>
+<title>信用卡查询已出账单</title>
 </head>
 
 <body>
@@ -18,8 +18,8 @@
 			<div class="row clearfix">
 				<div class="col-md-12 column">
 					<ul class="breadcrumb">
-						<li><a href="#">信用卡未出账单查询</a></li>
-						<li><a href="CreditCardBillYet_showCreditCard.action">选择信用卡</a></li>
+						<li><a href="#">信用卡已出账单查询</a></li>
+						<li><a href="CreditCardBillHave_showCreditCard.action">选择信用卡</a></li>
 						<li class="active">确认查询密码</li>
 						<li><a href="#">查询成功</a></li>
 					</ul>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
-					action=CreditCardBillYet_confirmPassword.action>
+					action=CreditCardBillHave_confirmPassword.action>
 					<div class="form-group">
 						<label for="searchPassword" class="col-sm-2 control-label">请输入查询密码:</label>
 						<div class="col-sm-10">

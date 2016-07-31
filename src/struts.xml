@@ -49,12 +49,18 @@
 			<result name="confirmFailedLimit">/cdLimit/confirmPassword.jsp</result>
 			<result name="confirmSuccessLimit">/cdLimit/showLimit.jsp</result>
 			
-			<!-- 已出账单查询  -->
+			<!-- 未出账单查询  -->
 			<result name="showCreditCardBillYet">/cdBillYet/showCreditCard.jsp</result>
 			<result name="selectOkBillYet">/cdBillYet/confirmPassword.jsp</result>
 			<result name="confirmFailedBillYet">/cdBillYet/confirmPassword.jsp</result>
 			<result name="confirmSuccessBillYet">/cdBillYet/displayBillYet.jsp</result>
-		
+			
+			<!-- 已出账单查询  -->
+			<result name="showCreditCardBillHave">/cdBillHave/showCreditCard.jsp</result>
+			<result name="selectOkBillHave">/cdBillHave/confirmPassword.jsp</result>
+			<result name="confirmFailedBillHave">/cdBillHave/confirmPassword.jsp</result>
+			<result name="confirmSuccessBillHave">/cdBillHave/displayBillHave.jsp</result>
+			
 		</action>
 	</package>
 </struts>    

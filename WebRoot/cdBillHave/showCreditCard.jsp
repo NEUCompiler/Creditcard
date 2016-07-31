@@ -5,7 +5,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>信用卡未出账单查询</title>
+<title>信用卡已出账单查询</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 				<li><a href="#">确认查询密码</a></li>
 				<li><a href="#">查询成功</a></li>
 			</ul>
-			<form action="CreditCardBillYet_selectCard.action" id="form">
+			<form action="CreditCardBillHave_selectCard.action" id="form">
 				请选择你的信用卡: <select name="selectCd" class="form-control">
 					<c:forEach items="${request.accountIdList}" var="li">
 						<option>${li}</option>
