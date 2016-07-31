@@ -22,7 +22,7 @@
 				<li><a href="#">密码设置</a></li>
 				<li><a href="#">交易密码修改成功</a></li>
 			</ul>
-			<form action="CredicardDealPasswordSet_selectCard.action" id="form">
+			<form action="CreditcardDealPasswordSet_selectCard.action" id="form">
 				请选择信用卡: <select name="selectCd" class="form-control">
 					<c:forEach items="${request.accountIdList}" var="li">
 						<option>${li}</option>

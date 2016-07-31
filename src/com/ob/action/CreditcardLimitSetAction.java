@@ -5,7 +5,7 @@ import com.ob.model.Client;
 import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CredicardLimitSetAction extends SuperAction implements
+public class CreditcardLimitSetAction extends SuperAction implements
 			ModelDriven<Account> {
 
 	/**

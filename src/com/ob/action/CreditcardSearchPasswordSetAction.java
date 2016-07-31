@@ -4,7 +4,7 @@ import com.ob.model.Account;
 import com.ob.service.AccountService;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CredicardSearchPasswordSetAction extends SuperAction implements
+public class CreditcardSearchPasswordSetAction extends SuperAction implements
 		ModelDriven<Account> {
 	/**
 	 * 

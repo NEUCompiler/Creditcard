@@ -27,13 +27,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li><a href="<%=basePath%>CreditcardActive_showCreditCard.action">信用卡激活</a>
 						</li>
 						<li><a
-							href="<%=basePath%>CredicardSearchPasswordSet_showCreditCard.action">信用卡查询密码设置</a>
+							href="<%=basePath%>CreditcardSearchPasswordSet_showCreditCard.action">信用卡查询密码设置</a>
 						</li>
-						<li><a href="<%=basePath%>CredicardDealPasswordSet_showCreditCard.action">信用卡交易密码设置</a>
+						<li><a href="<%=basePath%>CreditcardDealPasswordSet_showCreditCard.action">信用卡交易密码设置</a>
 						</li>
-						<li><a href="<%=basePath%>CredicardLimitSet_showCreditCard.action">信用卡额度设置</a>
+						<li><a href="<%=basePath%>CreditcardLimitSet_showCreditCard.action">信用卡额度设置</a>
 						</li>
-						<li><a href="<%=basePath%>CredicardLimitSearch_showCreditCard.action">信用额度查询</a>
+						<li><a href="<%=basePath%>CreditcardLimitSearch_showCreditCard.action">信用额度查询</a>
 						</li>
 						<li><a href="<%=basePath%>CreditCardBillHave_showCreditCard.action">已出账单查询</a>
 						</li>

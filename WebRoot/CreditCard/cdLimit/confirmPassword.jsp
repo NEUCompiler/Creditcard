@@ -19,7 +19,7 @@
 				<div class="col-md-12 column">
 					<ul class="breadcrumb">
 						<li><a href="#">信用卡可用额度设置</a></li>
-						<li><a href="CredicardLimitSet_showCreditCard.action">选择设置的信用卡</a></li>
+						<li><a href="CreditcardLimitSet_showCreditCard.action">选择设置的信用卡</a></li>
 						<li class="active">确认网银密码</li>
 						<li><a href="#">可用额度设置成功</a></li>
 					</ul>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
-					action=CredicardLimitSet_confirmPassword.action>
+					action=CreditcardLimitSet_confirmPassword.action>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label">请输入网银密码:</label>
 						<div class="col-sm-10">

@@ -1,7 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="/bootstrap.jsp"%>
-
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -23,7 +26,7 @@
 				<li><a href="#">设置查询密码</a></li>
 				<li><a href="#">激活成功</a></li>
 			</ul>
-			<form action="CreditcardActive_selectCard.action" id="form">
+			<form action="<%=basePath%>CreditcardActive_selectCard.action" id="form">
 				请选择你未激活的信用卡: <select name="selectCd" class="form-control">
 					<c:forEach items="${request.accountIdList}" var="li">
 						<option>${li}</option>

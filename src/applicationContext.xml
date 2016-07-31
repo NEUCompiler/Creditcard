@@ -74,11 +74,11 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-	<bean id="credicardLimitSearchAction" class="com.ob.action.CredicardLimitSearchAction"
+	<bean id="credicardLimitSearchAction" class="com.ob.action.CreditcardLimitSearchAction"
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-	<bean id="credicardLimitSetAction" class="com.ob.action.CredicardLimitSetAction"
+	<bean id="credicardLimitSetAction" class="com.ob.action.CreditcardLimitSetAction"
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
@@ -86,11 +86,11 @@
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-	<bean id="credicardDealPasswordSetAction" class="com.ob.action.CredicardDealPasswordSetAction"
+	<bean id="credicardDealPasswordSetAction" class="com.ob.action.CreditcardDealPasswordSetAction"
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
-	<bean id="credicardSearchPasswordSetAction" class="com.ob.action.CredicardSearchPasswordSetAction"
+	<bean id="credicardSearchPasswordSetAction" class="com.ob.action.CreditcardSearchPasswordSetAction"
 		scope="prototype">
 		<property name="accountService" ref="accountService"></property>
 	</bean>
