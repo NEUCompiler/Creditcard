@@ -26,9 +26,9 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>Account.hbm.xml</value>
-				<value>Client.hbm.xml</value>
-				<value>Dealinform.hbm.xml</value>
+				<value>com/ob/model/Account.hbm.xml</value>
+				<value>com/ob/model/Client.hbm.xml</value>
+				<value>com/ob/model/Dealinform.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

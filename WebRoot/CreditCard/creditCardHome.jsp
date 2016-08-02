@@ -1,13 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@ include file="/bootstrap.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-
+<script src="/resource/jquery/jquery.min.js"></script>
+<link href="/resource/css/bootstrap.min.css" rel="stylesheet">
+<script src="/resource/js/bootstrap.min.js"></script>
+<script src="/resource/ie10-viewport-bug-workaround.js"></script>
 </head>
 
 <body>
@@ -22,24 +21,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="<%=basePath%>CreditcardLoss_showCreditCard.action">信用卡挂失</a>
+						<li><a href="<%=basePath%>CreditCard/CreditcardLoss_showCreditCard.action">信用卡挂失</a>
 						</li>
-						<li><a href="<%=basePath%>CreditcardActive_showCreditCard.action">信用卡激活</a>
+						<li><a href="<%=basePath%>CreditCard/CreditcardActive_showCreditCard.action">信用卡激活</a>
 						</li>
 						<li><a
-							href="<%=basePath%>CreditcardSearchPasswordSet_showCreditCard.action">信用卡查询密码设置</a>
+							href="<%=basePath%>CreditCard/CreditcardSearchPasswordSet_showCreditCard.action">信用卡查询密码设置</a>
 						</li>
-						<li><a href="<%=basePath%>CreditcardDealPasswordSet_showCreditCard.action">信用卡交易密码设置</a>
+						<li><a href="<%=basePath%>CreditCard/CreditcardDealPasswordSet_showCreditCard.action">信用卡交易密码设置</a>
 						</li>
-						<li><a href="<%=basePath%>CreditcardLimitSet_showCreditCard.action">信用卡额度设置</a>
+						<li><a href="<%=basePath%>CreditCard/CreditcardLimitSet_showCreditCard.action">信用卡额度设置</a>
 						</li>
-						<li><a href="<%=basePath%>CreditcardLimitSearch_showCreditCard.action">信用额度查询</a>
+						<li><a href="<%=basePath%>CreditCard/CreditcardLimitSearch_showCreditCard.action">信用额度查询</a>
 						</li>
-						<li><a href="<%=basePath%>CreditCardBillHave_showCreditCard.action">已出账单查询</a>
+						<li><a href="<%=basePath%>CreditCard/CreditCardBillHave_showCreditCard.action">已出账单查询</a>
 						</li>
-						<li><a href="<%=basePath%>CreditCardBillYet_showCreditCard.action">未出账单查询</a>
+						<li><a href="<%=basePath%>CreditCard/CreditCardBillYet_showCreditCard.action">未出账单查询</a>
 						</li>
-						<li><a href="<%=basePath%>CreditcardIntegration_showCreditCard.action">积分查询</a>
+						<li><a href="<%=basePath%>CreditCard/CreditcardIntegration_showCreditCard.action">积分查询</a>
 						</li>
 						<li class="disabled"><a
 							href="credicard_searchIntegratel.action">申请进度查询</a></li>

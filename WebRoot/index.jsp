@@ -26,7 +26,7 @@
 								<div id="panel-element-447414"
 									class="panel-collapse collapse in">
 									<div class="panel-body">
-										<a href="#">下载</a>&nbsp <a href="#">演示</a>&nbsp
+										<a href="#">下载</a>&nbsp; <a href="#">演示</a>&nbsp;
 										<a href="#">注册</a>
 									</div>
 								</div>
@@ -38,7 +38,7 @@
 								</div>
 								<div id="panel-element-294826" class="panel-collapse collapse">
 									<div class="panel-body">
-										<a href="#">下载</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a
+										<a href="#">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
 											href="#">演示</a>
 									</div>
 								</div>
@@ -50,7 +50,7 @@
 								</div>
 								<div id="panel-element-294827" class="panel-collapse collapse">
 									<div class="panel-body">
-										<a href="#">下载</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a
+										<a href="#">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
 											href="#">演示</a>
 									</div>
 								</div>
@@ -62,7 +62,7 @@
 								</div>
 								<div id="panel-element-294828" class="panel-collapse collapse">
 									<div class="panel-body">
-										<a href="#">下载</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a
+										<a href="#">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
 											href="#">演示</a>
 									</div>
 								</div>

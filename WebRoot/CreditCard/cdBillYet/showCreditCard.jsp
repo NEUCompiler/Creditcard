@@ -18,14 +18,14 @@
 					<li><a href="#">确认查询密码</a></li>
 					<li><a href="#">查询成功</a></li>
 				</ul>
-				<form action="CreditCardBillYet_selectCard.action" id="form">
+				<form action="<%=basePath%>CreditCard/CreditCardBillYet_selectCard.action" id="form">
 					请选择你的信用卡: <select name="selectCd" class="form-control">
 						<c:forEach items="${request.accountIdList}" var="li">
 							<option>${li}</option>
 						</c:forEach>
 					</select>
 				</form>
-				<a class="btn btn-default" href="index.jsp" role="button">上一步</a> <input
+				<a class="btn btn-default" href="<%=basePath%>CreditCard/creditCardHome.jsp" role="button">上一步</a> <input
 					type="button" class="btn btn-default" value="下一步"
 					onclick="document.getElementById('form').submit();" />
 			</div>

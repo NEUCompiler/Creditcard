@@ -14,7 +14,7 @@
 			<div class="col-md-12 column">
 				<ul class="breadcrumb">
 					<li><a href="#">信用卡已出账单查询</a></li>
-					<li><a href="CreditCardBillHave_showCreditCard.action">选择信用卡</a></li>
+					<li><a href="<%=basePath%>CreditCard/CreditCardBillHave_showCreditCard.action">选择信用卡</a></li>
 					<li class="active">确认查询密码</li>
 					<li><a href="#">查询成功</a></li>
 				</ul>
@@ -23,7 +23,7 @@
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
-					action=CreditCardBillHave_confirmPassword.action>
+					action="<%=basePath%>CreditCard/CreditCardBillHave_confirmPassword.action">
 					<div class="form-group">
 						<label for="searchPassword" class="col-sm-2 control-label">请输入查询密码:</label>
 						<div class="col-sm-10">

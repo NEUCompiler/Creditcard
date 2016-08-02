@@ -1,11 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ include file="/bootstrap.jsp"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -20,7 +15,7 @@
 				<ul class="breadcrumb">
 					<li><a href="#">信用卡激活</a></li>
 					<li><a
-						href="<%=basePath%>CreditcardActive_showCreditCard.action">选择未激活的信用卡</a></li>
+						href="<%=basePath%>CreditCard/CreditcardActive_showCreditCard.action">选择未激活的信用卡</a></li>
 					<li><a href="#">设置网银密码</a></li>
 					<li class="active">设置查询密码</li>
 					<li><a href="#">激活成功</a></li>
@@ -30,7 +25,7 @@
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<form class="form-horizontal" role="form"
-					action=CreditcardActive_setSearchPassword.action>
+					action="<%=basePath%>CreditCard/CreditcardActive_setSearchPassword.action">
 					<div class="form-group">
 						<label for="searchPassword" class="col-sm-2 control-label">请设置查询密码:</label>
 						<div class="col-sm-10">

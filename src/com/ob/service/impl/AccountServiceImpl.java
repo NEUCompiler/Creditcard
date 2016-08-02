@@ -44,15 +44,12 @@ public class AccountServiceImpl implements  AccountService {
 		account = dao.findById(account.getAccountid());
 		account.setIsloss(1);
 		dao.merge(account);
-		System.out.println(account);
 		return true;
 	}
 
 	@Override
 	public boolean isActive(Account account) {
 		account = dao.findById(account.getAccountid());
-		
-		System.out.println(account);
 		
 		if (account.getIsactive() == 0) {
 			return false;
@@ -65,7 +62,6 @@ public class AccountServiceImpl implements  AccountService {
 		account = dao.findById(account.getAccountid());
 		account.setIsactive(1);
 		dao.merge(account);
-		System.out.println(account);
 		return true;
 	}
 	
@@ -188,7 +184,6 @@ public class AccountServiceImpl implements  AccountService {
 		Integer limit = account.getCdlimit();
 		account = dao.findById(account.getAccountid());
 		account.setCdlimit(limit);
-		System.out.println(account);
 		dao.merge(account);
 		return true;
 	}
